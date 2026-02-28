@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.2.1...v1.2.2) (2026-02-28)
+
+
+### Bug Fixes
+
+* expand SkillsSection with new AI and development tools icons and categories ([63122a4](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/63122a48e941b0295919aff2f5d4bfd9884ba250))
+
 ## [1.2.1](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.2.0...v1.2.1) (2026-02-28)
 
 
