@@ -1,9 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
-import { navLinks } from "@/lib/data";
+import { navLinks, personalInfo } from "@/lib/data";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -53,10 +54,16 @@ export default function Navbar() {
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
-            className="text-xl font-bold gradient-text"
+            className="flex items-center"
             whileHover={{ scale: 1.05 }}
           >
-            VJ
+            <Image
+              src="/images/vimukthi-jayasinghe-icon.png"
+              alt={`${personalInfo.name} logo`}
+              width={72}
+              height={72}
+              className="rounded-full"
+            />
           </motion.a>
 
           <div className="hidden md:flex items-center gap-1">
