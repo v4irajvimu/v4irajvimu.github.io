@@ -28,7 +28,7 @@ export const personalInfo: PersonalInfo = {
   university: "Sabaragamuwa University of Sri Lanka",
   resumeUrl: "#",
   avatarUrl: "/images/avatar.jpg",
-  learning: ["Flutter", "Micro Frontends", "AWS"],
+  learning: ["Agentic AI", "Cloud Computing", "React"],
 };
 
 export const navLinks: NavLink[] = [
