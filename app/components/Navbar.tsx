@@ -43,7 +43,9 @@ export default function Navbar() {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "glass shadow-lg" : "bg-transparent"
+        isScrolled
+          ? "bg-[rgba(17,17,25,0.8)] backdrop-blur-[12px] shadow-lg"
+          : "bg-transparent"
       }`}
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -91,6 +93,13 @@ export default function Navbar() {
           </button>
         </div>
       </div>
+
+      {isScrolled && (
+        <div className="relative h-px w-full">
+          <div className="absolute inset-0 bg-gradient-to-r from-accent via-accent-secondary to-accent" />
+          <div className="absolute -inset-y-1 inset-x-0 bg-gradient-to-r from-accent/50 via-accent-secondary/30 to-accent/50 blur-sm" />
+        </div>
+      )}
 
       <AnimatePresence>
         {isMobileOpen && (
