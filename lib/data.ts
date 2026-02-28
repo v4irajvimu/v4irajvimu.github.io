@@ -86,7 +86,7 @@ export const skillCategories: SkillCategory[] = [
       { name: "Material UI", icon: "mui" },
       { name: "Bootstrap", icon: "bootstrap" },
       { name: "Redux", icon: "redux" },
-      { name: "jQuery", icon: "jquery" },
+      { name: "MobX", icon: "mobx" },
     ],
   },
   {
@@ -122,6 +122,19 @@ export const skillCategories: SkillCategory[] = [
       { name: "PHP", icon: "php" },
     ],
   },
+  {
+    title: "AI, LLM & Tools",
+    skills: [
+      { name: "OpenAI", icon: "openai" },
+      { name: "Anthropic", icon: "anthropic" },
+      { name: "Google Gemini", icon: "google" },
+      { name: "Ollama", icon: "ollama" },
+      { name: "LangChain", icon: "langchain" },
+      { name: "Cursor", icon: "cursor" },
+      { name: "Claude Code", icon: "claude" },
+      { name: "Copilot", icon: "copilot" },
+    ],
+  }
 ];
 
 export const experiences: Experience[] = [

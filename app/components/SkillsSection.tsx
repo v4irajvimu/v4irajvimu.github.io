@@ -35,8 +35,17 @@ import {
   SiAdobephotoshop,
   SiAdobexd,
   SiPhp,
+  SiMobx,
+  SiOpenai,
+  SiAnthropic,
+  SiGooglegemini,
+  SiOllama,
+  SiLangchain,
+  SiClaude,
+  SiGithubcopilot,
 } from "react-icons/si";
 import { TbBrandCSharp } from "react-icons/tb";
+import { HiCursorClick } from "react-icons/hi";
 import { IconType } from "react-icons";
 import AnimatedSection from "./AnimatedSection";
 
@@ -73,6 +82,15 @@ const iconMap: Record<string, IconType> = {
   xd: SiAdobexd,
   csharp: TbBrandCSharp,
   php: SiPhp,
+  mobx: SiMobx,
+  openai: SiOpenai,
+  anthropic: SiAnthropic,
+  google: SiGooglegemini,
+  ollama: SiOllama,
+  langchain: SiLangchain,
+  cursor: HiCursorClick,
+  claude: SiClaude,
+  copilot: SiGithubcopilot,
 };
 
 export default function SkillsSection() {
