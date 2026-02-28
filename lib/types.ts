@@ -57,7 +57,7 @@ export interface Testimonial {
 export interface PersonalInfo {
   name: string;
   title: string;
-  tagline: string;
+  tagline: string[];
   bio: string;
   email: string;
   location: string;

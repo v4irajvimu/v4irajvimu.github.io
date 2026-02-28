@@ -54,7 +54,7 @@ export default function AboutSection() {
                 <div className="h-full w-full rounded-2xl bg-card overflow-hidden">
                   <Image
                     src="/images/vimukthi-jayasinghe-senior-software-engineer.webp"
-                    alt="Vimukthi Jayasinghe - Software Engineer"
+                    alt={`${personalInfo.name} - ${personalInfo.title}`}
                     width={800}
                     height={800}
                     priority
@@ -72,15 +72,26 @@ export default function AboutSection() {
                 {personalInfo.bio}
               </p>
               <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-                With a strong foundation in{" "}
+                With a mastery of{" "}
                 <span className="text-foreground font-medium">JavaScript</span>,{" "}
                 <span className="text-foreground font-medium">TypeScript</span>,
-                and modern frameworks like{" "}
+                and{" "}
+                <span className="text-foreground font-medium">Python</span>, I
+                build performant, accessible solutions using{" "}
                 <span className="text-foreground font-medium">React</span> and{" "}
-                <span className="text-foreground font-medium">Next.js</span>, I
-                build solutions that are performant, accessible, and scalable.
-                I&apos;m passionate about clean code, great user experiences,
-                and staying at the forefront of web technology.
+                <span className="text-foreground font-medium">Next.js</span> on
+                the frontend and{" "}
+                <span className="text-foreground font-medium">Node.js</span> with{" "}
+                <span className="text-foreground font-medium">AWS Serverless</span>{" "}
+                (<span className="text-foreground font-medium">Lambda</span>,{" "}
+                <span className="text-foreground font-medium">DynamoDB</span>) on
+                the backend. I am passionate about clean code and high-end UX,
+                specialized in integrating{" "}
+                <span className="text-foreground font-medium">Generative AI</span>{" "}
+                and{" "}
+                <span className="text-foreground font-medium">LLMs</span> to move
+                beyond traditional development into the next generation of
+                intelligent, cloud-native applications.
               </p>
             </AnimatedSection>
 

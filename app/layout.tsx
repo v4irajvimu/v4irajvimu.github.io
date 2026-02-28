@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { personalInfo } from "@/lib/data";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -12,13 +13,16 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const fullTitle = `${personalInfo.name} | ${personalInfo.title}`;
+const seoDescription = `Portfolio of ${personalInfo.name} — ${personalInfo.title} specializing in React, TypeScript, Next.js, and modern frontend development. Based in Sri Lanka.`;
+const shortDescription = `${personalInfo.title} specializing in React, TypeScript, Next.js, and modern frontend development.`;
+
 export const metadata: Metadata = {
-  title: "Viraj Vimukthi Jayasinghe | Senior Software Engineer",
-  description:
-    "Portfolio of Viraj Vimukthi Jayasinghe — Senior Software Engineer specializing in React, TypeScript, Next.js, and modern frontend development. Based in Sri Lanka.",
+  title: fullTitle,
+  description: seoDescription,
   keywords: [
-    "Viraj Vimukthi Jayasinghe",
-    "Senior Software Engineer",
+    personalInfo.name,
+    personalInfo.title,
     "Frontend Developer",
     "React Developer",
     "TypeScript",
@@ -27,31 +31,29 @@ export const metadata: Metadata = {
     "JavaScript",
     "Web Development",
   ],
-  authors: [{ name: "Viraj Vimukthi Jayasinghe" }],
-  creator: "Viraj Vimukthi Jayasinghe",
+  authors: [{ name: personalInfo.name }],
+  creator: personalInfo.name,
   metadataBase: new URL("https://v4irajvimu.github.io"),
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://v4irajvimu.github.io",
-    siteName: "Viraj Vimukthi Jayasinghe",
-    title: "Viraj Vimukthi Jayasinghe | Senior Software Engineer",
-    description:
-      "Senior Software Engineer specializing in React, TypeScript, Next.js, and modern frontend development.",
+    siteName: personalInfo.name,
+    title: fullTitle,
+    description: shortDescription,
     images: [
       {
         url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Viraj Vimukthi Jayasinghe - Senior Software Engineer",
+        alt: `${personalInfo.name} - ${personalInfo.title}`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Viraj Vimukthi Jayasinghe | Senior Software Engineer",
-    description:
-      "Senior Software Engineer specializing in React, TypeScript, Next.js, and modern frontend development.",
+    title: fullTitle,
+    description: shortDescription,
     creator: "@v4irajvimu",
     images: ["/images/og-image.jpg"],
   },
@@ -71,9 +73,9 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
-  name: "Viraj Vimukthi Jayasinghe",
+  name: personalInfo.name,
   url: "https://v4irajvimu.github.io",
-  jobTitle: "Senior Software Engineer",
+  jobTitle: personalInfo.title,
   alumniOf: {
     "@type": "CollegeOrUniversity",
     name: "Sabaragamuwa University of Sri Lanka",

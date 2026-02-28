@@ -10,10 +10,18 @@ import {
 } from "./types";
 
 export const personalInfo: PersonalInfo = {
-  name: "Viraj Vimukthi Jayasinghe",
-  title: "Senior Software Engineer",
-  tagline: "JavaScript Lover | Frontend Development Expert",
-  bio: "Experienced Software Engineer with a demonstrated history of working in the computer software industry. Passionate about building performant, accessible, and beautiful web applications with modern technologies.",
+  name: "Vimukthi Jayasinghe",
+  title: "Associate Technical Specialist",
+  tagline: [
+    "Full Stack Senior Software Engineer",
+    "JavaScript Lover",
+    "Frontend Development Expert",
+    "React Enthusiast",
+    "Cross Platform App Developer",
+    "Cloud Computing Expert",
+    "AI & LLM Integration Specialist"
+  ],
+  bio: "Associate Technical Specialist and Senior Full Stack Engineer dedicated to architecting AI-enhanced digital ecosystems. I bridge the gap between intelligent cloud infrastructure and intuitive user interfaces, transforming ambitious, data-driven ideas into scalable, production-ready software.",
   email: "viraj.vimu@gmail.com",
   location: "Mawanella, Sri Lanka",
   education: "B.Sc. in Computing and Information Systems",
@@ -233,7 +241,7 @@ export const testimonials: Testimonial[] = [
     role: "Engineering Manager",
     company: "Tech Corp",
     content:
-      "Viraj is an exceptional frontend developer with a keen eye for detail. His ability to translate complex designs into pixel-perfect, performant code is remarkable. A true team player who consistently delivers beyond expectations.",
+      "Vimukthi is an exceptional frontend developer with a keen eye for detail. His ability to translate complex designs into pixel-perfect, performant code is remarkable. A true team player who consistently delivers beyond expectations.",
     avatar: "/images/testimonials/avatar-1.jpg",
   },
   {
@@ -241,7 +249,7 @@ export const testimonials: Testimonial[] = [
     role: "Product Manager",
     company: "StartupXYZ",
     content:
-      "Working with Viraj was a fantastic experience. He brought creative solutions to challenging problems and his deep understanding of modern web technologies helped us ship our product ahead of schedule.",
+      "Working with Vimukthi was a fantastic experience. He brought creative solutions to challenging problems and his deep understanding of modern web technologies helped us ship our product ahead of schedule.",
     avatar: "/images/testimonials/avatar-2.jpg",
   },
   {
@@ -249,7 +257,7 @@ export const testimonials: Testimonial[] = [
     role: "Lead Developer",
     company: "Digital Agency",
     content:
-      "Viraj's expertise in React and TypeScript is outstanding. He mentored our junior developers effectively and established coding practices that significantly improved our codebase quality.",
+      "Vimukthi's expertise in React and TypeScript is outstanding. He mentored our junior developers effectively and established coding practices that significantly improved our codebase quality.",
     avatar: "/images/testimonials/avatar-3.jpg",
   },
 ];

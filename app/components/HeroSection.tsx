@@ -5,37 +5,30 @@ import { personalInfo } from "@/lib/data";
 import { HiArrowDown } from "react-icons/hi";
 import { useEffect, useState } from "react";
 
-const roles = [
-  "Senior Software Engineer",
-  "Frontend Development Expert",
-  "JavaScript Lover",
-  "React Enthusiast",
-];
-
 export default function HeroSection() {
   const [roleIndex, setRoleIndex] = useState(0);
   const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
-    const currentRole = roles[roleIndex];
+    const currentRole = personalInfo.tagline[roleIndex];
     let timeout: NodeJS.Timeout;
 
     if (!isDeleting && displayText === currentRole) {
       timeout = setTimeout(() => setIsDeleting(true), 2000);
     } else if (isDeleting && displayText === "") {
       setIsDeleting(false);
-      setRoleIndex((prev) => (prev + 1) % roles.length);
+      setRoleIndex((prev) => (prev + 1) % personalInfo.tagline.length);
     } else {
       timeout = setTimeout(
         () => {
           setDisplayText(
             isDeleting
               ? currentRole.substring(0, displayText.length - 1)
-              : currentRole.substring(0, displayText.length + 1)
+              : currentRole.substring(0, displayText.length + 1),
           );
         },
-        isDeleting ? 40 : 80
+        isDeleting ? 40 : 80,
       );
     }
 
@@ -88,7 +81,9 @@ export default function HeroSection() {
           className="text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl"
         >
           Hi, I&apos;m{" "}
-          <span className="gradient-text">{personalInfo.name.split(" ")[0]}</span>
+          <span className="gradient-text">
+            {personalInfo.name.split(" ")[0]}
+          </span>
         </motion.h1>
 
         <motion.div

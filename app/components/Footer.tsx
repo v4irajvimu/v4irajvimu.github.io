@@ -1,6 +1,6 @@
 "use client";
 
-import { socialLinks } from "@/lib/data";
+import { personalInfo, socialLinks } from "@/lib/data";
 import {
   SiGithub,
   SiLinkedin,
@@ -29,8 +29,8 @@ export default function Footer() {
     <footer className="border-t border-card-border py-8 px-4">
       <div className="mx-auto max-w-6xl flex flex-col sm:flex-row items-center justify-between gap-4">
         <p className="text-sm text-muted-foreground">
-          &copy; {new Date().getFullYear()} Viraj Vimukthi Jayasinghe. All
-          rights reserved.
+          &copy; {new Date().getFullYear()} {personalInfo.name}. All rights
+          reserved.
         </p>
 
         <div className="flex items-center gap-3">
