@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.3.0...v1.3.1) (2026-02-28)
+
+
+### Bug Fixes
+
+* update Navbar component with logo and styling adjustments ([1c00a80](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/1c00a8075d403c8b396448c0fb3390163a4c46d9))
+
 # [1.3.0](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.2.5...v1.3.0) (2026-02-28)
 
 
