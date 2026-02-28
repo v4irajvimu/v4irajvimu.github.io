@@ -28,25 +28,26 @@ export default function ExperienceSection() {
             return (
               <div
                 key={index}
-                className={`relative mb-12 last:mb-0 md:w-1/2 ${
-                  isLeft
-                    ? "md:pr-12 md:ml-0"
-                    : "md:pl-12 md:ml-auto"
+                className={`group/exp relative mb-12 last:mb-0 md:w-1/2 ${
+                  isLeft ? "md:pr-12 md:ml-0" : "md:pl-12 md:ml-auto"
                 } pl-8 md:pl-0`}
               >
-                <motion.div
+                <motion.a
+                  href={exp.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.2, type: "spring" }}
-                  className={`absolute top-0 w-11 h-11 rounded-full border-2 border-accent overflow-hidden z-10 left-0 -translate-x-1/2 md:left-auto ${
+                  className={`absolute top-0 w-11 h-11 rounded-full border-2 border-accent overflow-hidden z-10 left-0 -translate-x-1/2 md:left-auto cursor-pointer transition-all duration-300 group-hover/exp:scale-120 group-hover/exp:-translate-y-1 group-hover/exp:shadow-lg group-hover/exp:shadow-accent/30 ${
                     isLeft
                       ? "md:right-0 md:translate-x-1/2"
                       : "md:left-0 md:-translate-x-1/2"
                   }`}
                 >
                   <CompanyLogo src={exp.logo} alt={exp.company} />
-                </motion.div>
+                </motion.a>
 
                 <AnimatedSection delay={index * 0.15}>
                   <motion.div
@@ -71,7 +72,10 @@ export default function ExperienceSection() {
                       </span>
                     </div>
                     <div className="flex items-center gap-1 text-sm text-muted-foreground mb-3">
-                      <HiLocationMarker size={14} className="text-muted shrink-0" />
+                      <HiLocationMarker
+                        size={14}
+                        className="text-muted shrink-0"
+                      />
                       {exp.location}
                     </div>
 
@@ -81,14 +85,20 @@ export default function ExperienceSection() {
                       )}
 
                       {exp.roles.map((role, roleIndex) => (
-                        <div key={roleIndex} className="relative mb-6 last:mb-0">
+                        <div
+                          key={roleIndex}
+                          className="relative mb-6 last:mb-0"
+                        >
                           {hasPromotions && (
                             <div className="flex items-center gap-3 mb-2">
                               <div className="relative z-10 flex h-4 w-4 items-center justify-center rounded-full border border-accent/50 bg-card">
                                 <div className="h-1.5 w-1.5 rounded-full bg-accent" />
                               </div>
                               {roleIndex < exp.roles.length - 1 && (
-                                <HiChevronUp className="text-accent/50" size={12} />
+                                <HiChevronUp
+                                  className="text-accent/50"
+                                  size={12}
+                                />
                               )}
                               <span className="text-xs font-mono text-muted-foreground">
                                 {getDurationString(role.from, role.to)}
@@ -127,7 +137,7 @@ export default function ExperienceSection() {
                               {role.technologies.map((tech) => (
                                 <span
                                   key={tech}
-                                  className="text-xs px-2 py-1 rounded-md bg-white/5 text-muted-foreground"
+                                  className="text-xs px-2 py-1 rounded-md border border-accent/80 bg-white/5 text-muted-foreground transition-colors duration-200 hover:bg-accent/15 hover:text-accent hover:border-accent/80"
                                 >
                                   {tech}
                                 </span>
