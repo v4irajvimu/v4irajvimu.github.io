@@ -19,13 +19,34 @@ export interface SkillCategory {
   skills: Skill[];
 }
 
-export interface Experience {
-  company: string;
-  role: string;
-  duration: string;
+export interface DateFrom {
+  month: number;
+  year: number;
+}
+
+export interface DateTo {
+  month: number;
+  year: number;
+  isPresent?: boolean;
+}
+
+export interface ExperienceRole {
+  title: string;
+  from: DateFrom;
+  to: DateTo;
   description: string;
   achievements: string[];
   technologies: string[];
+}
+
+export interface Experience {
+  company: string;
+  location: string;
+  url: string;
+  logo: string;
+  from: DateFrom;
+  to: DateTo;
+  roles: ExperienceRole[];
 }
 
 export interface Project {

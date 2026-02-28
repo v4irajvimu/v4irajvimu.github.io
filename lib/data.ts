@@ -139,43 +139,150 @@ export const skillCategories: SkillCategory[] = [
 
 export const experiences: Experience[] = [
   {
-    company: "Your Company Name",
-    role: "Senior Software Engineer",
-    duration: "2022 - Present",
-    description:
-      "Leading frontend development initiatives, architecting scalable web applications, and mentoring junior developers.",
-    achievements: [
-      "Led the migration of a legacy application to React with TypeScript, improving performance by 40%",
-      "Architected micro-frontend infrastructure serving 100K+ daily active users",
-      "Established coding standards and CI/CD pipelines for the frontend team",
+    company: "Wiley Global Technology (PVT) LTD.",
+    location: "Colombo 5, Sri Lanka",
+    url: "https://www.wiley.com/en-sg",
+    logo: "/images/companies/wiley-logo.png",
+
+    from: { month: 3, year: 2022 },
+    to: { month: 0, year: 0, isPresent: true },
+    roles: [
+      {
+        title: "Associate Technical Specialist",
+        from: { month: 7, year: 2023 },
+        to: { month: 0, year: 0, isPresent: true },
+        description:
+          "Driving technical strategy and leading cross-functional engineering teams to deliver scalable, AI-enhanced web platforms.",
+        achievements: [
+          "Architected micro-frontend infrastructure serving 100K+ daily active users",
+          "Led the integration of Generative AI and LLMs into product workflows",
+          "Established coding standards and CI/CD pipelines for the frontend team",
+        ],
+        technologies: ["React", "TypeScript", "Next.js", "AWS", "GraphQL", "GenAI"],
+      },
+      {
+        title: "Senior Software Engineer",
+        from: { month: 3, year: 2022 },
+        to: { month: 7, year: 2023 },
+        description:
+          "Led frontend development initiatives, architecting scalable web applications and mentoring junior developers.",
+        achievements: [
+          "Led the migration of a legacy application to React with TypeScript, improving performance by 40%",
+          "Built reusable component libraries that accelerated development across teams",
+          "Implemented responsive designs that improved mobile user engagement by 35%",
+        ],
+        technologies: ["React", "TypeScript", "Node.js", "AWS", "Redux"],
+      },
     ],
-    technologies: ["React", "TypeScript", "Next.js", "AWS", "GraphQL"],
   },
   {
-    company: "Previous Company",
-    role: "Software Engineer",
-    duration: "2020 - 2022",
-    description:
-      "Developed and maintained multiple web applications using modern JavaScript frameworks.",
-    achievements: [
-      "Built a real-time dashboard using React and WebSocket, reducing data latency by 60%",
-      "Implemented responsive designs that improved mobile user engagement by 35%",
-      "Integrated third-party APIs and payment gateways for e-commerce platform",
+    company: "Villvay",
+    location: "Dehiwala, Sri Lanka",
+    url: "https://villvay.com",
+    logo: "/images/companies/villvay.jpeg",
+
+    from: { month: 11, year: 2020 },
+    to: { month: 3, year: 2022 },
+    roles: [
+      {
+        title: "Senior Software Engineer - React JS",
+        from: { month: 11, year: 2020 },
+        to: { month: 3, year: 2022 },
+        description:
+          "Developed and maintained multiple high-traffic web applications using React and modern JavaScript frameworks.",
+        achievements: [
+          "Built a real-time dashboard using React and WebSocket, reducing data latency by 60%",
+          "Integrated third-party APIs and payment gateways for e-commerce platforms",
+          "Mentored junior developers and conducted code reviews to ensure quality",
+        ],
+        technologies: ["React", "TypeScript", "Node.js", "MongoDB", "Redux"],
+      },
     ],
-    technologies: ["React", "Vue.js", "Node.js", "MongoDB", "Redux"],
   },
   {
-    company: "First Company",
-    role: "Junior Software Engineer",
-    duration: "2018 - 2020",
-    description:
-      "Started professional career building web applications and learning best practices in software development.",
-    achievements: [
-      "Developed RESTful APIs using Node.js and Express for multiple client projects",
-      "Created reusable component library that accelerated development across teams",
-      "Contributed to open-source projects and internal tooling",
+    company: "Savantis Solutions LLC",
+    location: "Nugegoda, Sri Lanka",
+    url: "https://www.savantis.com",
+    logo: "/images/companies/savantis.jfif",
+
+    from: { month: 4, year: 2019 },
+    to: { month: 11, year: 2020 },
+    roles: [
+      {
+        title: "Senior Software Engineer",
+        from: { month: 4, year: 2020 },
+        to: { month: 11, year: 2020 },
+        description:
+          "Led development of enterprise-grade web applications and drove architectural decisions across projects.",
+        achievements: [
+          "Architected and delivered a client-facing SPA that improved user retention by 30%",
+          "Established frontend testing practices with unit and integration test coverage",
+          "Collaborated with cross-functional teams to define technical roadmaps",
+        ],
+        technologies: ["React", "Vue.js", "Node.js", "GraphQL", "AWS"],
+      },
+      {
+        title: "Software Engineer",
+        from: { month: 4, year: 2019 },
+        to: { month: 4, year: 2020 },
+        description:
+          "Developed and maintained multiple web applications using modern JavaScript frameworks.",
+        achievements: [
+          "Built responsive, accessible UIs for client projects using React and Vue.js",
+          "Integrated RESTful APIs and optimized frontend performance",
+          "Contributed to internal tooling that improved developer productivity",
+        ],
+        technologies: ["React", "Vue.js", "JavaScript", "Node.js", "MySQL"],
+      },
     ],
-    technologies: ["JavaScript", "jQuery", "PHP", "Laravel", "MySQL"],
+  },
+  {
+    company: "Racing and Sports",
+    location: "Mt. Lavinia, Sri Lanka",
+    url: "https://www.racingandsports.com",
+    logo: "/images/companies/racing-and-sports.jpeg",
+
+    from: { month: 10, year: 2016 },
+    to: { month: 3, year: 2019 },
+    roles: [
+      {
+        title: "Software Engineer",
+        from: { month: 10, year: 2016 },
+        to: { month: 3, year: 2019 },
+        description:
+          "Built and maintained web applications for real-time sports data platforms, handling high-concurrency traffic.",
+        achievements: [
+          "Developed real-time data visualization features for live sports events",
+          "Optimized database queries and API endpoints for high-traffic scenarios",
+          "Created reusable component library that accelerated development across teams",
+        ],
+        technologies: ["JavaScript", "jQuery", "PHP", "Laravel", "MySQL"],
+      },
+    ],
+  },
+  {
+    company: "Prologics IT Solutions",
+    location: "Colombo, Sri Lanka",
+    url: "https://www.prologics.lk",
+    logo: "/images/companies/prologics-it-solutions.png",
+
+    from: { month: 11, year: 2015 },
+    to: { month: 10, year: 2016 },
+    roles: [
+      {
+        title: "Associate Software Engineer",
+        from: { month: 11, year: 2015 },
+        to: { month: 10, year: 2016 },
+        description:
+          "Started professional career building web applications and learning best practices in software development.",
+        achievements: [
+          "Developed RESTful APIs using Node.js and Express for multiple client projects",
+          "Built responsive web interfaces following modern design principles",
+          "Contributed to open-source projects and internal tooling",
+        ],
+        technologies: ["JavaScript", "PHP", "HTML5", "CSS3", "MySQL"],
+      },
+    ],
   },
 ];
 

@@ -2,9 +2,11 @@
 
 import { motion } from "framer-motion";
 import { experiences } from "@/lib/data";
-import { HiBriefcase } from "react-icons/hi";
+import { getDurationString } from "@/lib/utils";
+import { HiChevronUp, HiLocationMarker, HiExternalLink } from "react-icons/hi";
 import AnimatedSection from "./AnimatedSection";
 import SectionHeading from "./SectionHeading";
+import CompanyLogo from "./CompanyLogo";
 
 export default function ExperienceSection() {
   return (
@@ -17,11 +19,11 @@ export default function ExperienceSection() {
         </AnimatedSection>
 
         <div className="relative">
-          {/* Timeline line */}
           <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-card-border md:-translate-x-px" />
 
           {experiences.map((exp, index) => {
             const isLeft = index % 2 === 0;
+            const hasPromotions = exp.roles.length > 1;
 
             return (
               <div
@@ -32,19 +34,18 @@ export default function ExperienceSection() {
                     : "md:pl-12 md:ml-auto"
                 } pl-8 md:pl-0`}
               >
-                {/* Timeline dot */}
                 <motion.div
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.2, type: "spring" }}
-                  className={`absolute top-0 w-10 h-10 rounded-full bg-card border-2 border-accent flex items-center justify-center z-10 left-0 -translate-x-1/2 md:left-auto ${
+                  className={`absolute top-0 w-11 h-11 rounded-full border-2 border-accent overflow-hidden z-10 left-0 -translate-x-1/2 md:left-auto ${
                     isLeft
                       ? "md:right-0 md:translate-x-1/2"
                       : "md:left-0 md:-translate-x-1/2"
                   }`}
                 >
-                  <HiBriefcase className="text-accent" size={16} />
+                  <CompanyLogo src={exp.logo} alt={exp.company} />
                 </motion.div>
 
                 <AnimatedSection delay={index * 0.15}>
@@ -52,37 +53,88 @@ export default function ExperienceSection() {
                     whileHover={{ scale: 1.02 }}
                     className="rounded-xl border border-card-border bg-card p-6 transition-all hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5"
                   >
-                    <div className="flex flex-wrap items-center gap-2 mb-2">
+                    <div className="flex flex-wrap items-center justify-between gap-2 mb-1">
+                      <a
+                        href={exp.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group/link flex items-center gap-1.5 text-xl font-bold text-foreground hover:text-accent transition-colors"
+                      >
+                        {exp.company}
+                        <HiExternalLink
+                          size={14}
+                          className="opacity-0 group-hover/link:opacity-100 transition-opacity text-accent"
+                        />
+                      </a>
                       <span className="text-xs font-mono text-accent bg-accent/10 px-2 py-1 rounded">
-                        {exp.duration}
+                        {getDurationString(exp.from, exp.to)}
                       </span>
                     </div>
-                    <h3 className="text-xl font-bold text-foreground">
-                      {exp.role}
-                    </h3>
-                    <p className="text-accent mt-1">{exp.company}</p>
-                    <p className="text-muted-foreground text-sm mt-3 leading-relaxed">
-                      {exp.description}
-                    </p>
-                    <ul className="mt-4 space-y-2">
-                      {exp.achievements.map((achievement, i) => (
-                        <li
-                          key={i}
-                          className="flex items-start gap-2 text-sm text-muted-foreground"
-                        >
-                          <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-accent shrink-0" />
-                          {achievement}
-                        </li>
-                      ))}
-                    </ul>
-                    <div className="flex flex-wrap gap-2 mt-4 pt-4 border-t border-card-border">
-                      {exp.technologies.map((tech) => (
-                        <span
-                          key={tech}
-                          className="text-xs px-2 py-1 rounded-md bg-white/5 text-muted-foreground"
-                        >
-                          {tech}
-                        </span>
+                    <div className="flex items-center gap-1 text-sm text-muted-foreground mb-3">
+                      <HiLocationMarker size={14} className="text-muted shrink-0" />
+                      {exp.location}
+                    </div>
+
+                    <div className="relative">
+                      {hasPromotions && (
+                        <div className="absolute left-[7px] top-4 bottom-4 w-px bg-accent/20" />
+                      )}
+
+                      {exp.roles.map((role, roleIndex) => (
+                        <div key={roleIndex} className="relative mb-6 last:mb-0">
+                          {hasPromotions && (
+                            <div className="flex items-center gap-3 mb-2">
+                              <div className="relative z-10 flex h-4 w-4 items-center justify-center rounded-full border border-accent/50 bg-card">
+                                <div className="h-1.5 w-1.5 rounded-full bg-accent" />
+                              </div>
+                              {roleIndex < exp.roles.length - 1 && (
+                                <HiChevronUp className="text-accent/50" size={12} />
+                              )}
+                              <span className="text-xs font-mono text-muted-foreground">
+                                {getDurationString(role.from, role.to)}
+                              </span>
+                            </div>
+                          )}
+
+                          <div className={hasPromotions ? "pl-7" : ""}>
+                            <h4
+                              className={`font-semibold text-foreground ${
+                                hasPromotions ? "text-base" : "text-lg"
+                              }`}
+                            >
+                              {role.title}
+                            </h4>
+                            {!hasPromotions && (
+                              <span className="text-xs font-mono text-muted-foreground">
+                                {getDurationString(role.from, role.to)}
+                              </span>
+                            )}
+                            <p className="text-muted-foreground text-sm mt-2 leading-relaxed">
+                              {role.description}
+                            </p>
+                            <ul className="mt-3 space-y-1.5">
+                              {role.achievements.map((achievement, i) => (
+                                <li
+                                  key={i}
+                                  className="flex items-start gap-2 text-sm text-muted-foreground"
+                                >
+                                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-accent shrink-0" />
+                                  {achievement}
+                                </li>
+                              ))}
+                            </ul>
+                            <div className="flex flex-wrap gap-2 mt-3">
+                              {role.technologies.map((tech) => (
+                                <span
+                                  key={tech}
+                                  className="text-xs px-2 py-1 rounded-md bg-white/5 text-muted-foreground"
+                                >
+                                  {tech}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
                       ))}
                     </div>
                   </motion.div>
