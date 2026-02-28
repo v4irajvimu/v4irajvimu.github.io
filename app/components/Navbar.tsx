@@ -49,7 +49,7 @@ export default function Navbar() {
       }`}
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
+        <div className="flex h-20 items-center justify-between">
           <motion.a
             href="#"
             onClick={(e) => {
@@ -60,11 +60,11 @@ export default function Navbar() {
             whileHover={{ scale: 1.05 }}
           >
             <Image
-              src="/images/vimukthi-jayasinghe-icon.png"
+              src="/images/vimukthi-jayasinghe-logo.png"
               alt={`${personalInfo.name} logo`}
-              width={72}
-              height={72}
-              className="rounded-full"
+              width={80}
+              height={80}
+              className="rounded-full drop-shadow-[0_0_14px_rgba(6,182,212,0.5)] hover:drop-shadow-[0_0_20px_rgba(6,182,212,0.7)] transition-all duration-300"
             />
           </motion.a>
 
