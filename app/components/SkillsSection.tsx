@@ -43,6 +43,18 @@ import {
   SiLangchain,
   SiClaude,
   SiGithubcopilot,
+  SiAwslambda,
+  SiAmazons3,
+  SiAmazondynamodb,
+  SiAmazonapigateway,
+  SiAmazoncloudwatch,
+  SiCloudflare,
+  SiCloudflareworkers,
+  SiAmazonsqs,
+  SiAmazonecs,
+  SiAmazonwebservices,
+  SiAmazoniam,
+  SiAmazonec2,
 } from "react-icons/si";
 import { TbBrandCSharp } from "react-icons/tb";
 import { HiCursorClick } from "react-icons/hi";
@@ -91,6 +103,25 @@ const iconMap: Record<string, IconType> = {
   cursor: HiCursorClick,
   claude: SiClaude,
   copilot: SiGithubcopilot,
+  lambda: SiAwslambda,
+  s3: SiAmazons3,
+  cloudformation: SiAmazonwebservices,
+  dynamodb: SiAmazondynamodb,
+  appsync: SiAmazonwebservices,
+  apigateway: SiAmazonapigateway,
+  cloudfront: SiAmazonwebservices,
+  cloudwatch: SiAmazoncloudwatch,
+  cloudflare: SiCloudflare,
+  cloudflareworkers: SiCloudflareworkers,
+  stepfunctions: SiAmazonwebservices,
+  sqs: SiAmazonsqs,
+  sns: SiAmazonwebservices,
+  efs: SiAmazonwebservices,
+  ecr: SiAmazonwebservices,
+  ecs: SiAmazonecs,
+  iam: SiAmazoniam,
+  ec2: SiAmazonec2,
+  sftp: SiAmazonwebservices,
 };
 
 export default function SkillsSection() {
@@ -123,7 +154,7 @@ export default function SkillsSection() {
                         duration: 0.3,
                       }}
                       whileHover={{ scale: 1.08, y: -4 }}
-                      className="group flex items-center gap-2.5 rounded-xl border border-card-border bg-card px-4 py-3 transition-all hover:border-accent/40 hover:shadow-lg hover:shadow-accent/5"
+                      className="group flex items-center gap-2.5 rounded-xl border border-accent/50 bg-card px-4 py-3 transition-all hover:border-accent/80 hover:bg-accent/15 hover:shadow-lg hover:shadow-accent/5"
                     >
                       {Icon && (
                         <Icon
