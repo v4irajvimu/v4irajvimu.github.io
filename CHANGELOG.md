@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.2.5...v1.3.0) (2026-02-28)
+
+
+### Features
+
+* update blog posts with new titles, excerpts, URLs, dates, and read times ([bee28a4](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/bee28a448166819a47bd6598411b012e91880ca2))
+
 ## [1.2.5](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.2.4...v1.2.5) (2026-02-28)
 
 
