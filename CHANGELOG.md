@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.2.2...v1.2.3) (2026-02-28)
+
+
+### Bug Fixes
+
+* update experience section with new roles and company details ([07e20ad](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/07e20ad30d3c5a03bedc53e8a8476a472fb4a2a3))
+
 ## [1.2.2](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.2.1...v1.2.2) (2026-02-28)
 
 
