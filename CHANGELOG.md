@@ -1,3 +1,15 @@
+# [1.2.0](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.1.0...v1.2.0) (2026-02-28)
+
+
+### Bug Fixes
+
+* update favicon.ico to improve site branding ([b3fe9d3](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/b3fe9d37c8c86fe313cc36cb3efe6075ce2e0d56))
+
+
+### Features
+
+* add logo image to Navbar for enhanced branding ([f870dd5](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/f870dd5a6b95a142b83d8245dd86c45ee7a08b90))
+
 # [1.1.0](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.0.0...v1.1.0) (2026-02-28)
 
 
