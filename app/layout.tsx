@@ -14,8 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 const fullTitle = `${personalInfo.name} | ${personalInfo.title}`;
-const seoDescription = `Portfolio of ${personalInfo.name} — ${personalInfo.title} specializing in React, TypeScript, Next.js, and modern frontend development. Based in Sri Lanka.`;
-const shortDescription = `${personalInfo.title} specializing in React, TypeScript, Next.js, and modern frontend development.`;
+const seoDescription = `${personalInfo.name} — ${personalInfo.bio}`;
 
 export const metadata: Metadata = {
   title: fullTitle,
@@ -23,13 +22,19 @@ export const metadata: Metadata = {
   keywords: [
     personalInfo.name,
     personalInfo.title,
-    "Frontend Developer",
+    "Senior Software Engineer",
+    "Full Stack Developer",
     "React Developer",
-    "TypeScript",
     "Next.js",
-    "Sri Lanka",
+    "TypeScript",
     "JavaScript",
-    "Web Development",
+    "Python",
+    "Node.js",
+    "AWS Serverless",
+    "Generative AI",
+    "LLM Integration",
+    "Cloud Computing",
+    "Sri Lanka",
   ],
   authors: [{ name: personalInfo.name }],
   creator: personalInfo.name,
@@ -40,7 +45,7 @@ export const metadata: Metadata = {
     url: "https://v4irajvimu.github.io",
     siteName: personalInfo.name,
     title: fullTitle,
-    description: shortDescription,
+    description: personalInfo.bio,
     images: [
       {
         url: "/images/og-image.jpg",
@@ -53,7 +58,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: fullTitle,
-    description: shortDescription,
+    description: personalInfo.bio,
     creator: "@v4irajvimu",
     images: ["/images/og-image.jpg"],
   },
@@ -76,14 +81,15 @@ const jsonLd = {
   name: personalInfo.name,
   url: "https://v4irajvimu.github.io",
   jobTitle: personalInfo.title,
+  description: personalInfo.bio,
   alumniOf: {
     "@type": "CollegeOrUniversity",
-    name: "Sabaragamuwa University of Sri Lanka",
+    name: personalInfo.university,
   },
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Mawanella",
-    addressCountry: "Sri Lanka",
+    addressLocality: personalInfo.location.split(",")[0].trim(),
+    addressCountry: personalInfo.location.split(",")[1]?.trim() || "Sri Lanka",
   },
   sameAs: [
     "https://github.com/v4irajvimu",
