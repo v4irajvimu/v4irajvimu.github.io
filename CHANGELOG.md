@@ -1,3 +1,10 @@
+## [1.2.5](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.2.4...v1.2.5) (2026-02-28)
+
+
+### Bug Fixes
+
+* add new cloud services category ([4ddd013](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/4ddd013421aa238e4edc9b510218d2534d7731b1))
+
 ## [1.2.4](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.2.3...v1.2.4) (2026-02-28)
 
 
