@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.2.0...v1.2.1) (2026-02-28)
+
+
+### Bug Fixes
+
+* enhance  intersection observer for improved interactivity ([b13ddc7](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/b13ddc7029c550e4c892e598f8808e0f2eb3ba18))
+
 # [1.2.0](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.1.0...v1.2.0) (2026-02-28)
 
 
