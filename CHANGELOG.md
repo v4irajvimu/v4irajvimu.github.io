@@ -1,3 +1,17 @@
+# [1.1.0](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.0.0...v1.1.0) (2026-02-28)
+
+
+### Bug Fixes
+
+* refine SEO metadata and update personal information for improved clarity ([494fd3b](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/494fd3b10aa7ab223b8a0b98718da31e87cf6c90))
+* update personal information and enhance metadata for SEO optimization ([b7c3126](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/b7c3126009d021d77fa60c58d226d027bfc16b8d))
+* update personal information in data.ts to reflect new learning topics ([802e725](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/802e72579c12a1ecfe4e7ed19ab060fdd1b890e3))
+
+
+### Features
+
+* enhance AboutSection with image component and layout adjustments ([8beee9b](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/8beee9bfb3980ad8ce9693e877fc486e2ba53e44))
+
 # 1.0.0 (2026-02-28)
 
 
