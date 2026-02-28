@@ -358,30 +358,30 @@ export const projects: Project[] = [
 
 export const blogPosts: BlogPost[] = [
   {
-    title: "Building Scalable Micro Frontends with React",
+    title: "React Context API vs Zustand State Manager",
     excerpt:
-      "Explore how to architect and implement micro frontends using React, Module Federation, and modern build tools.",
-    url: "https://medium.com/@viraj.vimu",
-    date: "2024-12-15",
-    readTime: "8 min read",
+      "This article will show a practical performance comparison between the usage of React Context API and the Zustand State Manager library by solving one scenario with the above-mentioned approaches.",
+    url: "https://medium.com/@viraj.vimu/react-context-api-vs-zustand-state-manager-98ca9ac76904",
+    date: "2022-02-16",
+    readTime: "5 min read",
     platform: "Medium",
   },
   {
-    title: "TypeScript Best Practices for Large-Scale Applications",
+    title: "Nano Stores: Share state among browser tabs, React.js guide.",
     excerpt:
       "A comprehensive guide to writing maintainable TypeScript code with advanced patterns and practical examples.",
-    url: "https://dev.to/v4irajvimu",
-    date: "2024-10-20",
-    readTime: "12 min read",
-    platform: "Dev.to",
+    url: "https://medium.com/@viraj.vimu/nano-stores-share-state-among-browser-tabs-react-js-guide-d7402dd24772",
+    date: "2023-03-12",
+    readTime: "6 min read",
+    platform: "Medium",
   },
   {
-    title: "Server-Side Rendering vs Static Generation in Next.js",
+    title: "Mother of all JavaScript Array methods. Array.reduce() — Part 1",
     excerpt:
       "Understanding when to use SSR, SSG, and ISR in Next.js applications for optimal performance and SEO.",
-    url: "https://medium.com/@viraj.vimu",
-    date: "2024-08-05",
-    readTime: "6 min read",
+    url: "https://medium.com/@viraj.vimu/mother-of-all-javascript-array-methods-array-reduce-part-1-62b17b171afe",
+    date: "2022-02-25",
+    readTime: "5 min read",
     platform: "Medium",
   },
 ];
