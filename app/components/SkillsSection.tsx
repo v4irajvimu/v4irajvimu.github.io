@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { skillCategories } from "@/lib/data";
+import SectionHeading from "./SectionHeading";
 import {
   SiReact,
   SiNextdotjs,
@@ -79,12 +80,9 @@ export default function SkillsSection() {
     <section id="skills" className="py-24 px-4">
       <div className="mx-auto max-w-6xl">
         <AnimatedSection>
-          <div className="flex items-center gap-4 mb-12">
-            <h2 className="text-3xl font-bold sm:text-4xl">
-              Tech <span className="gradient-text">Stack</span>
-            </h2>
-            <div className="flex-1 h-px bg-card-border" />
-          </div>
+          <SectionHeading>
+            Tech <span className="gradient-text">Stack</span>
+          </SectionHeading>
         </AnimatedSection>
 
         <div className="space-y-10">

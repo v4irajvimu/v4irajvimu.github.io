@@ -4,18 +4,16 @@ import { motion } from "framer-motion";
 import { projects } from "@/lib/data";
 import { HiExternalLink, HiCode } from "react-icons/hi";
 import AnimatedSection from "./AnimatedSection";
+import SectionHeading from "./SectionHeading";
 
 export default function ProjectsSection() {
   return (
     <section id="projects" className="py-24 px-4">
       <div className="mx-auto max-w-6xl">
         <AnimatedSection>
-          <div className="flex items-center gap-4 mb-12">
-            <h2 className="text-3xl font-bold sm:text-4xl">
-              Featured <span className="gradient-text">Projects</span>
-            </h2>
-            <div className="flex-1 h-px bg-card-border" />
-          </div>
+          <SectionHeading>
+            Featured <span className="gradient-text">Projects</span>
+          </SectionHeading>
         </AnimatedSection>
 
         <div className="grid gap-6 md:grid-cols-2">

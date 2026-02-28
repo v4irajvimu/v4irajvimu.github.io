@@ -10,6 +10,7 @@ import {
   HiLightningBolt,
 } from "react-icons/hi";
 import AnimatedSection from "./AnimatedSection";
+import SectionHeading from "./SectionHeading";
 
 const facts = [
   {
@@ -39,12 +40,9 @@ export default function AboutSection() {
     <section id="about" className="py-24 px-4">
       <div className="mx-auto max-w-6xl">
         <AnimatedSection>
-          <div className="flex items-center gap-4 mb-12">
-            <h2 className="text-3xl font-bold sm:text-4xl">
-              About <span className="gradient-text">Me</span>
-            </h2>
-            <div className="flex-1 h-px bg-card-border" />
-          </div>
+          <SectionHeading>
+            About <span className="gradient-text">Me</span>
+          </SectionHeading>
         </AnimatedSection>
 
         <div className="grid gap-12 lg:grid-cols-5">

@@ -19,6 +19,7 @@ import {
 } from "react-icons/si";
 import { IconType } from "react-icons";
 import AnimatedSection from "./AnimatedSection";
+import SectionHeading from "./SectionHeading";
 
 const socialIconMap: Record<string, IconType> = {
   github: SiGithub,
@@ -36,12 +37,9 @@ export default function ContactSection() {
     <section id="contact" className="py-24 px-4">
       <div className="mx-auto max-w-6xl">
         <AnimatedSection>
-          <div className="flex items-center gap-4 mb-12">
-            <h2 className="text-3xl font-bold sm:text-4xl">
-              Get in <span className="gradient-text">Touch</span>
-            </h2>
-            <div className="flex-1 h-px bg-card-border" />
-          </div>
+          <SectionHeading>
+            Get in <span className="gradient-text">Touch</span>
+          </SectionHeading>
         </AnimatedSection>
 
         <div className="grid gap-8 lg:grid-cols-2">

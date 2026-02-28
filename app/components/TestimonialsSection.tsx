@@ -4,18 +4,16 @@ import { motion } from "framer-motion";
 import { testimonials } from "@/lib/data";
 import { HiStar } from "react-icons/hi";
 import AnimatedSection from "./AnimatedSection";
+import SectionHeading from "./SectionHeading";
 
 export default function TestimonialsSection() {
   return (
     <section id="testimonials" className="py-24 px-4">
       <div className="mx-auto max-w-6xl">
         <AnimatedSection>
-          <div className="flex items-center gap-4 mb-12">
-            <h2 className="text-3xl font-bold sm:text-4xl">
-              What People <span className="gradient-text">Say</span>
-            </h2>
-            <div className="flex-1 h-px bg-card-border" />
-          </div>
+          <SectionHeading>
+            What People <span className="gradient-text">Say</span>
+          </SectionHeading>
         </AnimatedSection>
 
         <div className="grid gap-6 md:grid-cols-3">

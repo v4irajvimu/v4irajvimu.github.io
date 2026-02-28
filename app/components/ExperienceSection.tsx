@@ -4,18 +4,16 @@ import { motion } from "framer-motion";
 import { experiences } from "@/lib/data";
 import { HiBriefcase } from "react-icons/hi";
 import AnimatedSection from "./AnimatedSection";
+import SectionHeading from "./SectionHeading";
 
 export default function ExperienceSection() {
   return (
     <section id="experience" className="py-24 px-4">
       <div className="mx-auto max-w-6xl">
         <AnimatedSection>
-          <div className="flex items-center gap-4 mb-16">
-            <h2 className="text-3xl font-bold sm:text-4xl">
-              Work <span className="gradient-text">Experience</span>
-            </h2>
-            <div className="flex-1 h-px bg-card-border" />
-          </div>
+          <SectionHeading className="mb-16">
+            Work <span className="gradient-text">Experience</span>
+          </SectionHeading>
         </AnimatedSection>
 
         <div className="relative">
