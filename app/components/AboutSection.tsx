@@ -1,8 +1,14 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { personalInfo } from "@/lib/data";
-import { HiLocationMarker, HiAcademicCap, HiMail, HiLightningBolt } from "react-icons/hi";
+import {
+  HiLocationMarker,
+  HiAcademicCap,
+  HiMail,
+  HiLightningBolt,
+} from "react-icons/hi";
 import AnimatedSection from "./AnimatedSection";
 
 const facts = [
@@ -45,10 +51,15 @@ export default function AboutSection() {
           <AnimatedSection className="lg:col-span-2" delay={0.1}>
             <div className="relative group">
               <div className="aspect-square rounded-2xl bg-gradient-to-br from-accent to-accent-secondary p-[2px]">
-                <div className="h-full w-full rounded-2xl bg-card flex items-center justify-center overflow-hidden">
-                  <div className="text-8xl font-bold gradient-text select-none">
-                    VJ
-                  </div>
+                <div className="h-full w-full rounded-2xl bg-card overflow-hidden">
+                  <Image
+                    src="/images/vimukthi-jayasinghe-senior-software-engineer.webp"
+                    alt="Vimukthi Jayasinghe - Software Engineer"
+                    width={800}
+                    height={800}
+                    priority
+                    className="h-full w-full object-cover"
+                  />
                 </div>
               </div>
               <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-accent to-accent-secondary opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-20" />
@@ -68,8 +79,8 @@ export default function AboutSection() {
                 <span className="text-foreground font-medium">React</span> and{" "}
                 <span className="text-foreground font-medium">Next.js</span>, I
                 build solutions that are performant, accessible, and scalable.
-                I&apos;m passionate about clean code, great user experiences, and
-                staying at the forefront of web technology.
+                I&apos;m passionate about clean code, great user experiences,
+                and staying at the forefront of web technology.
               </p>
             </AnimatedSection>
 
