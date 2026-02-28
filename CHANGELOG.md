@@ -1,3 +1,10 @@
+## [1.2.4](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.2.3...v1.2.4) (2026-02-28)
+
+
+### Bug Fixes
+
+* merge changes ([f5c5d02](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/f5c5d02a403c5e06e8ab22bf28a7551e686f1309))
+
 ## [1.2.3](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.2.2...v1.2.3) (2026-02-28)
 
 
