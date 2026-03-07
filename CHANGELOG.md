@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.4.0...v1.5.0) (2026-03-07)
+
+
+### Features
+
+* update Google Analytics integration to use environment variable for measurement ID ([8a84e0f](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/8a84e0fd6d3ada405e04d8dab25f8f8188c7953e))
+
 # [1.4.0](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.3.1...v1.4.0) (2026-03-07)
 
 
