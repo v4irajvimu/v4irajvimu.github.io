@@ -1,3 +1,11 @@
+# [1.6.0](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.5.0...v1.6.0) (2026-03-08)
+
+
+### Features
+
+* enhance TestimonialsSection with detail modal for LinkedIn recommendations ([37c92a8](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/37c92a8bb23b0861fed99f05f20c6e82cfeddc6c))
+* implement linkedin recommendations section with swiper integration ([e31659c](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/e31659c9933c9cb41e003782dbd46fd633674296))
+
 # [1.5.0](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.4.0...v1.5.0) (2026-03-07)
 
 
