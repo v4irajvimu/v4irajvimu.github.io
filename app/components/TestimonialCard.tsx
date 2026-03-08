@@ -83,7 +83,7 @@ export default function TestimonialCard({
           </a>
         </div>
 
-        <blockquote className="text-sm text-muted-foreground leading-relaxed italic line-clamp-5 flex-1 min-h-0 mt-0">
+        <blockquote className="text-sm text-muted-foreground leading-relaxed italic line-clamp-5 flex-1 min-h-0 mt-0 whitespace-pre-line">
           &ldquo;{rec.content}&rdquo;
         </blockquote>
 

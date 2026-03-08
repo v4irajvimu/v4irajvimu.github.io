@@ -107,7 +107,7 @@ function DetailModal({
                 </a>
               </div>
 
-              <blockquote className="text-sm sm:text-base text-muted-foreground leading-relaxed italic">
+              <blockquote className="text-sm sm:text-base text-muted-foreground leading-relaxed italic whitespace-pre-line">
                 &ldquo;{rec.content}&rdquo;
               </blockquote>
 
