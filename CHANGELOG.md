@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.9.1...v1.10.0) (2026-03-08)
+
+
+### Features
+
+* enhance SEO metadata and improve layout accessibility ([04b08d4](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/04b08d4ca0ed51819deae8db748efd07b61c45a6))
+
 ## [1.9.1](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.9.0...v1.9.1) (2026-03-08)
 
 
