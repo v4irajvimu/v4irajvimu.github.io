@@ -10,6 +10,7 @@ import type { LinkedInRecommendation } from "@/lib/types";
 import AnimatedSection from "./AnimatedSection";
 import SectionHeading from "./SectionHeading";
 import TestimonialCard from "./TestimonialCard";
+import SectionGradientBg from "./SectionGradientBg";
 import "swiper/css";
 
 const CARD_MIN_HEIGHT = 340;
@@ -150,21 +151,7 @@ export default function TestimonialsSection() {
       className="relative py-24 px-4 overflow-hidden"
       aria-label="LinkedIn Recommendations"
     >
-      {/* Gradient background */}
-      <div
-        className="absolute inset-0 -z-10 opacity-90"
-        style={{
-          background:
-            "linear-gradient(135deg, rgba(59, 130, 246, 0.12) 0%, rgba(6, 182, 212, 0.08) 50%, rgba(59, 130, 246, 0.06) 100%)",
-        }}
-      />
-      <div
-        className="absolute inset-0 -z-10 opacity-60"
-        style={{
-          background:
-            "radial-gradient(ellipse 80% 50% at 50% 0%, rgba(59, 130, 246, 0.15), transparent 60%)",
-        }}
-      />
+      <SectionGradientBg />
 
       <div className="mx-auto max-w-6xl relative">
         <AnimatedSection>

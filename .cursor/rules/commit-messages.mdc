@@ -11,6 +11,7 @@ This project uses **commitlint** with `@commitlint/config-conventional`. When su
 
 - **Header**: `type: subject` (one line, imperative, lowercase subject)
 - **Body** (optional): blank line after header, then bullet or paragraph lines
+  - **Critical**: Every body line must be **≤ 100 characters** (including `- ` for bullets). Commitlint will reject longer lines.
 - **Footer** (optional): blank line after body, then footers
 
 ## Rules to satisfy
@@ -22,7 +23,7 @@ This project uses **commitlint** with `@commitlint/config-conventional`. When su
    - Trimmed, non-empty.
 3. **Body**:
    - One blank line between header and body.
-   - Every body line **must be ≤ 100 characters**. Break long lines or shorten the text.
+   - Every body line **must be ≤ 100 characters** (including leading `- `). Break or shorten; commitlint enforces this.
 4. **Header**: Total header line (type + subject) ≤ 100 characters.
 
 ## Example (passes)
@@ -47,6 +48,11 @@ Fails: subject has PascalCase ("LinkedIn", "Swiper").
 - Reintroduced TestimonialsSection with a new design using Swiper for displaying LinkedIn recommendations.
 ```
 Fails: body line over 100 characters.
+
+```
+- Introduced a new TestimonialCard component to encapsulate the rendering of individual LinkedIn recommendations.
+```
+Fails: body line over 100 characters (count includes "- ").
 
 ## Reference
 

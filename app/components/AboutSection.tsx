@@ -11,6 +11,7 @@ import {
 } from "react-icons/hi";
 import AnimatedSection from "./AnimatedSection";
 import SectionHeading from "./SectionHeading";
+import SectionGradientBg from "./SectionGradientBg";
 
 const facts = [
   {
@@ -37,8 +38,9 @@ const facts = [
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-24 px-4">
-      <div className="mx-auto max-w-6xl">
+    <section id="about" className="relative py-24 px-4 overflow-hidden">
+      <SectionGradientBg />
+      <div className="mx-auto max-w-6xl relative">
         <AnimatedSection>
           <SectionHeading>
             About <span className="gradient-text">Me</span>
