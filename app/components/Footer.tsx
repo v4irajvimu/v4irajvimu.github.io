@@ -36,7 +36,7 @@ export default function Footer() {
           </p>
 
           <p className="text-sm text-muted-foreground">
-            Built with Next.js + Tailwind CSS (v{packageJson.version})
+            Built with Next.js + Tailwind CSS (<b>v{packageJson.version}</b>)
           </p>
 
           <div className="flex items-center gap-3">
