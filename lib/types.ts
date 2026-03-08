@@ -97,6 +97,7 @@ export interface PersonalInfo {
   tagline: string[];
   bio: string;
   email: string;
+  phone: string;
   location: string;
   education: string;
   university: string;

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { personalInfo, socialLinks } from "@/lib/data";
 import {
   HiMail,
+  HiPhone,
   HiLocationMarker,
   HiExternalLink,
 } from "react-icons/hi";
@@ -65,6 +66,27 @@ export default function ContactSection() {
                     </p>
                     <p className="text-foreground group-hover:text-accent transition-colors">
                       {personalInfo.email}
+                    </p>
+                  </div>
+                  <HiExternalLink
+                    size={16}
+                    className="ml-auto text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity"
+                  />
+                </a>
+
+                <a
+                  href={`tel:${personalInfo.phone.replace(/\s/g, "")}`}
+                  className="flex items-center gap-4 rounded-xl border border-card-border bg-card p-4 transition-all hover:border-accent/30 hover:shadow-lg group"
+                >
+                  <div className="rounded-lg bg-accent/10 p-3 text-accent">
+                    <HiPhone size={24} />
+                  </div>
+                  <div>
+                    <p className="text-xs text-muted uppercase tracking-wider">
+                      Phone
+                    </p>
+                    <p className="text-foreground group-hover:text-accent transition-colors">
+                      {personalInfo.phone}
                     </p>
                   </div>
                   <HiExternalLink
