@@ -1,0 +1,53 @@
+---
+description: Commit message format (conventional commits + commitlint)
+alwaysApply: true
+---
+
+# Commit message guidelines
+
+This project uses **commitlint** with `@commitlint/config-conventional`. When suggesting or writing commit messages, follow these rules so they pass the `commit-msg` hook.
+
+## Format
+
+- **Header**: `type: subject` (one line, imperative, lowercase subject)
+- **Body** (optional): blank line after header, then bullet or paragraph lines
+- **Footer** (optional): blank line after body, then footers
+
+## Rules to satisfy
+
+1. **Type**: Use one of `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `build`, `ci`, `chore`, `perf`, `revert`.
+2. **Subject**:
+   - Lowercase only. No PascalCase, start-case, or sentence-case (e.g. use "linkedin" and "swiper", not "LinkedIn" or "Swiper").
+   - No trailing period.
+   - Trimmed, non-empty.
+3. **Body**:
+   - One blank line between header and body.
+   - Every body line **must be ≤ 100 characters**. Break long lines or shorten the text.
+4. **Header**: Total header line (type + subject) ≤ 100 characters.
+
+## Example (passes)
+
+```
+feat: add linkedin recommendations section with swiper
+
+- Bump package to 1.5.0 and add Swiper dependency.
+- Reintroduce TestimonialsSection with Swiper for LinkedIn recommendations.
+- Add LinkedInRecommendation type and sample data in lib/data.ts.
+- Add detail modal for recommendations in TestimonialsSection.
+```
+
+## Example (fails)
+
+```
+feat: implement LinkedIn recommendations with Swiper integration
+```
+Fails: subject has PascalCase ("LinkedIn", "Swiper").
+
+```
+- Reintroduced TestimonialsSection with a new design using Swiper for displaying LinkedIn recommendations.
+```
+Fails: body line over 100 characters.
+
+## Reference
+
+Config: `commitlint.config.js` (extends `@commitlint/config-conventional`). Hook: `.husky/commit-msg`.
