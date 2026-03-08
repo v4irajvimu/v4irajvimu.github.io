@@ -1,3 +1,11 @@
+## [1.8.1](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.8.0...v1.8.1) (2026-03-08)
+
+
+### Bug Fixes
+
+* bold package version in Footer component for improved visibility ([f1361a9](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/f1361a94edcbc0f0d5e992dbc3cbc429ecba14d1))
+* update release message format in .releaserc.json to remove [skip ci] tag ([6497a8c](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/6497a8c00d07068fae4424f8ba17ae8fbab6b2bc))
+
 # [1.8.0](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.7.0...v1.8.0) (2026-03-08)
 
 
