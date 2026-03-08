@@ -1,3 +1,10 @@
+## [1.9.1](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.9.0...v1.9.1) (2026-03-08)
+
+
+### Bug Fixes
+
+* update blockquote styling in TestimonialCard and TestimonialsSection ([e953633](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/e9536337a6e45ec19ea9d37cb5a58234e3d8b161))
+
 # [1.9.0](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.8.1...v1.9.0) (2026-03-08)
 
 
