@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.8.1...v1.9.0) (2026-03-08)
+
+
+### Features
+
+* add phone contact option to ContactSection and update personalInfo ([7b25d6a](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/7b25d6a5a57fcc08c098e1feb2f2cdfb4be1abc0))
+
 ## [1.8.1](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.8.0...v1.8.1) (2026-03-08)
 
 
