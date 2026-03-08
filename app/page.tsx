@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main>
+      <main id="main" role="main">
         <HeroSection />
         <AboutSection />
         <SkillsSection />

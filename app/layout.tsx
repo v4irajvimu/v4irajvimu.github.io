@@ -16,10 +16,15 @@ const geistMono = Geist_Mono({
 
 const fullTitle = `${personalInfo.name} | ${personalInfo.title}`;
 const seoDescription = `${personalInfo.name} — ${personalInfo.bio}`;
+const baseUrl = "https://v4irajvimu.github.io";
 
 export const metadata: Metadata = {
   title: fullTitle,
   description: seoDescription,
+  metadataBase: new URL(baseUrl),
+  alternates: {
+    canonical: "/",
+  },
   keywords: [
     personalInfo.name,
     personalInfo.title,
@@ -37,16 +42,16 @@ export const metadata: Metadata = {
     "Cloud Computing",
     "Sri Lanka",
   ],
-  authors: [{ name: personalInfo.name }],
+  authors: [{ name: personalInfo.name, url: baseUrl }],
   creator: personalInfo.name,
-  metadataBase: new URL("https://v4irajvimu.github.io"),
+  publisher: personalInfo.name,
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://v4irajvimu.github.io",
+    url: baseUrl,
     siteName: personalInfo.name,
     title: fullTitle,
-    description: personalInfo.bio,
+    description: seoDescription,
     images: [
       {
         url: "/images/og-image.jpg",
@@ -59,7 +64,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: fullTitle,
-    description: personalInfo.bio,
+    description: seoDescription,
     creator: "@v4irajvimu",
     images: ["/images/og-image.jpg"],
   },
@@ -74,15 +79,18 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  manifest: "/manifest.webmanifest",
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: personalInfo.name,
-  url: "https://v4irajvimu.github.io",
+  url: baseUrl,
+  image: `${baseUrl}${personalInfo.avatarUrl.startsWith("/") ? personalInfo.avatarUrl : `/${personalInfo.avatarUrl}`}`,
   jobTitle: personalInfo.title,
   description: personalInfo.bio,
+  email: personalInfo.email,
   alumniOf: {
     "@type": "CollegeOrUniversity",
     name: personalInfo.university,
@@ -94,14 +102,29 @@ const jsonLd = {
   },
   sameAs: [
     "https://github.com/v4irajvimu",
-    "https://linkedin.com/in/v4irajvimu",
+    "https://linkedin.com/in/virajvimu",
     "https://twitter.com/v4irajvimu",
     "https://medium.com/@viraj.vimu",
     "https://dev.to/v4irajvimu",
   ],
 };
 
+const jsonLdPersonWithId = { ...jsonLd, "@id": `${baseUrl}#person` };
+
+const jsonLdWebSite = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: personalInfo.name,
+  url: baseUrl,
+  description: personalInfo.bio,
+  author: { "@id": `${baseUrl}#person` },
+};
+
 const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+
+export const viewport = {
+  themeColor: "#0a0a0a",
+};
 
 export default function RootLayout({
   children,
@@ -113,7 +136,11 @@ export default function RootLayout({
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdPersonWithId) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdWebSite) }}
         />
       </head>
       <body
