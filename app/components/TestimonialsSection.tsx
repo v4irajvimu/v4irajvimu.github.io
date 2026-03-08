@@ -41,7 +41,7 @@ function DetailModal({
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.2 }}
-        className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+        className="fixed inset-0 z-50 flex items-start sm:items-center justify-center overflow-y-auto p-4 pt-6 pb-8 sm:py-4 bg-black/60 backdrop-blur-sm"
         onClick={handleBackdropClick}
         role="dialog"
         aria-modal="true"
@@ -53,80 +53,82 @@ function DetailModal({
           exit={{ opacity: 0, scale: 0.95, y: 10 }}
           transition={{ duration: 0.2 }}
           onClick={(e) => e.stopPropagation()}
-          className="w-full max-w-lg rounded-2xl border border-white/10 bg-card backdrop-blur-xl shadow-2xl overflow-hidden"
+          className="w-full max-w-lg max-h-[90dvh] sm:max-h-[85vh] rounded-2xl border border-white/10 bg-card backdrop-blur-xl shadow-2xl overflow-hidden flex flex-col"
         >
-          <div className="p-6">
-            <div className="flex items-start gap-4 mb-4">
-              <div className="flex-shrink-0 ring-2 ring-white/20 rounded-full overflow-hidden">
-                <img
-                  src={rec.profilePhoto}
-                  alt={rec.name}
-                  width={64}
-                  height={64}
-                  className="w-16 h-16 object-cover"
-                />
-              </div>
-              <div className="min-w-0 flex-1">
-                <h3
-                  id="recommendation-title"
-                  className="text-lg font-semibold text-foreground"
+          <div className="flex-1 min-h-0 overflow-y-auto overscroll-contain">
+            <div className="p-4 sm:p-6">
+              <div className="flex items-start gap-3 sm:gap-4 mb-4">
+                <div className="flex-shrink-0 ring-2 ring-white/20 rounded-full overflow-hidden">
+                  <img
+                    src={rec.profilePhoto}
+                    alt={rec.name}
+                    width={64}
+                    height={64}
+                    className="w-14 h-14 sm:w-16 sm:h-16 object-cover"
+                  />
+                </div>
+                <div className="min-w-0 flex-1">
+                  <h3
+                    id="recommendation-title"
+                    className="text-base sm:text-lg font-semibold text-foreground"
+                  >
+                    {rec.name}
+                  </h3>
+                  <p className="text-sm text-muted-foreground line-clamp-2">
+                    {rec.role}
+                    {rec.company ? ` at ${rec.company}` : ""}
+                  </p>
+                  {(rec.date || rec.connectionDegree || rec.relationship) && (
+                    <div className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-0.5 text-xs text-muted-foreground">
+                      {rec.date && <span>{rec.date}</span>}
+                      {rec.connectionDegree && (
+                        <span>
+                          {rec.connectionDegree === "1st"
+                            ? "1st degree connection"
+                            : `${rec.connectionDegree} connection`}
+                        </span>
+                      )}
+                      {rec.relationship && (
+                        <span className="block w-full mt-0.5">
+                          {rec.relationship}
+                        </span>
+                      )}
+                    </div>
+                  )}
+                </div>
+                <a
+                  href={rec.linkedInUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-shrink-0 p-2 rounded-lg text-[#0A66C2] bg-[#0A66C2]/10 hover:bg-[#0A66C2]/20 transition-colors"
+                  aria-label={`View ${rec.name}'s recommendation on LinkedIn`}
                 >
-                  {rec.name}
-                </h3>
-                <p className="text-sm text-muted-foreground line-clamp-2">
-                  {rec.role}
-                  {rec.company ? ` at ${rec.company}` : ""}
-                </p>
-                {(rec.date || rec.connectionDegree || rec.relationship) && (
-                  <div className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-0.5 text-xs text-muted-foreground">
-                    {rec.date && <span>{rec.date}</span>}
-                    {rec.connectionDegree && (
-                      <span>
-                        {rec.connectionDegree === "1st"
-                          ? "1st degree connection"
-                          : `${rec.connectionDegree} connection`}
-                      </span>
-                    )}
-                    {rec.relationship && (
-                      <span className="block w-full mt-0.5">
-                        {rec.relationship}
-                      </span>
-                    )}
-                  </div>
-                )}
+                  <SiLinkedin className="w-6 h-6 sm:w-7 sm:h-7" />
+                </a>
               </div>
-              <a
-                href={rec.linkedInUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-shrink-0 p-2 rounded-lg text-[#0A66C2] bg-[#0A66C2]/10 hover:bg-[#0A66C2]/20 transition-colors"
-                aria-label={`View ${rec.name}'s recommendation on LinkedIn`}
-              >
-                <SiLinkedin className="w-7 h-7" />
-              </a>
-            </div>
 
-            <blockquote className="text-muted-foreground leading-relaxed italic">
-              &ldquo;{rec.content}&rdquo;
-            </blockquote>
+              <blockquote className="text-sm sm:text-base text-muted-foreground leading-relaxed italic">
+                &ldquo;{rec.content}&rdquo;
+              </blockquote>
 
-            <div className="mt-6 flex flex-wrap items-center justify-between gap-3">
-              <a
-                href={rec.linkedInUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm text-accent hover:underline"
-              >
-                <SiLinkedin className="w-4 h-4" />
-                View on LinkedIn
-              </a>
-              <button
-                type="button"
-                onClick={onClose}
-                className="px-4 py-2 text-sm font-medium rounded-lg border border-card-border bg-white/5 hover:bg-white/10 transition-colors"
-              >
-                Close
-              </button>
+              <div className="mt-6 flex flex-wrap items-center justify-between gap-3">
+                <a
+                  href={rec.linkedInUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm text-accent hover:underline"
+                >
+                  <SiLinkedin className="w-4 h-4" />
+                  View on LinkedIn
+                </a>
+                <button
+                  type="button"
+                  onClick={onClose}
+                  className="px-4 py-2 text-sm font-medium rounded-lg border border-card-border bg-white/5 hover:bg-white/10 transition-colors"
+                >
+                  Close
+                </button>
+              </div>
             </div>
           </div>
         </motion.div>
