@@ -1,3 +1,11 @@
+# [1.7.0](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.6.0...v1.7.0) (2026-03-08)
+
+
+### Features
+
+* add testimonialCard component and refactor testimonialsSection ([836569c](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/836569c71468a54a20dae71d6e57898bb9786de5))
+* enhance AboutSection and TestimonialsSection with gradient background ([3d39ad5](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/3d39ad56d5c20290926a6b2efd6c00a4c9f6c146))
+
 # [1.6.0](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.5.0...v1.6.0) (2026-03-08)
 
 
