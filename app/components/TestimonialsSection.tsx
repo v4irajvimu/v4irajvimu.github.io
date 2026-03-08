@@ -1,59 +1,297 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { testimonials } from "@/lib/data";
-import { HiStar } from "react-icons/hi";
+import { useState, useCallback, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { SiLinkedin } from "react-icons/si";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Mousewheel, Autoplay } from "swiper/modules";
+import { linkedInRecommendations } from "@/lib/data";
+import type { LinkedInRecommendation } from "@/lib/types";
 import AnimatedSection from "./AnimatedSection";
 import SectionHeading from "./SectionHeading";
+import "swiper/css";
+
+const CARD_MIN_HEIGHT = 340;
+
+function DetailModal({
+  rec,
+  onClose,
+}: {
+  rec: LinkedInRecommendation;
+  onClose: () => void;
+}) {
+  const handleBackdropClick = (e: React.MouseEvent) => {
+    if (e.target === e.currentTarget) onClose();
+  };
+
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", handler);
+    return () => document.removeEventListener("keydown", handler);
+  }, [onClose]);
+
+  return (
+    <AnimatePresence>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.2 }}
+        className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+        onClick={handleBackdropClick}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="recommendation-title"
+      >
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95, y: 10 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          exit={{ opacity: 0, scale: 0.95, y: 10 }}
+          transition={{ duration: 0.2 }}
+          onClick={(e) => e.stopPropagation()}
+          className="w-full max-w-lg rounded-2xl border border-white/10 bg-card backdrop-blur-xl shadow-2xl overflow-hidden"
+        >
+          <div className="p-6">
+            <div className="flex items-start gap-4 mb-4">
+              <div className="flex-shrink-0 ring-2 ring-white/20 rounded-full overflow-hidden">
+                <img
+                  src={rec.profilePhoto}
+                  alt={rec.name}
+                  width={64}
+                  height={64}
+                  className="w-16 h-16 object-cover"
+                />
+              </div>
+              <div className="min-w-0 flex-1">
+                <h3
+                  id="recommendation-title"
+                  className="text-lg font-semibold text-foreground"
+                >
+                  {rec.name}
+                </h3>
+                <p className="text-sm text-muted-foreground line-clamp-2">
+                  {rec.role}
+                  {rec.company ? ` at ${rec.company}` : ""}
+                </p>
+                {(rec.date || rec.connectionDegree || rec.relationship) && (
+                  <div className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-0.5 text-xs text-muted-foreground">
+                    {rec.date && <span>{rec.date}</span>}
+                    {rec.connectionDegree && (
+                      <span>
+                        {rec.connectionDegree === "1st"
+                          ? "1st degree connection"
+                          : `${rec.connectionDegree} connection`}
+                      </span>
+                    )}
+                    {rec.relationship && (
+                      <span className="block w-full mt-0.5">
+                        {rec.relationship}
+                      </span>
+                    )}
+                  </div>
+                )}
+              </div>
+              <a
+                href={rec.linkedInUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-shrink-0 p-2 rounded-lg text-[#0A66C2] bg-[#0A66C2]/10 hover:bg-[#0A66C2]/20 transition-colors"
+                aria-label={`View ${rec.name}'s recommendation on LinkedIn`}
+              >
+                <SiLinkedin className="w-7 h-7" />
+              </a>
+            </div>
+
+            <blockquote className="text-muted-foreground leading-relaxed italic">
+              &ldquo;{rec.content}&rdquo;
+            </blockquote>
+
+            <div className="mt-6 flex flex-wrap items-center justify-between gap-3">
+              <a
+                href={rec.linkedInUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm text-accent hover:underline"
+              >
+                <SiLinkedin className="w-4 h-4" />
+                View on LinkedIn
+              </a>
+              <button
+                type="button"
+                onClick={onClose}
+                className="px-4 py-2 text-sm font-medium rounded-lg border border-card-border bg-white/5 hover:bg-white/10 transition-colors"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </motion.div>
+      </motion.div>
+    </AnimatePresence>
+  );
+}
 
 export default function TestimonialsSection() {
+  const [selectedRec, setSelectedRec] = useState<LinkedInRecommendation | null>(
+    null,
+  );
+  const openDetail = useCallback(
+    (rec: LinkedInRecommendation) => setSelectedRec(rec),
+    [],
+  );
+  const closeDetail = useCallback(() => setSelectedRec(null), []);
+
   return (
-    <section id="testimonials" className="py-24 px-4">
-      <div className="mx-auto max-w-6xl">
+    <section
+      id="testimonials"
+      className="relative py-24 px-4 overflow-hidden"
+      aria-label="LinkedIn Recommendations"
+    >
+      {/* Gradient background */}
+      <div
+        className="absolute inset-0 -z-10 opacity-90"
+        style={{
+          background:
+            "linear-gradient(135deg, rgba(59, 130, 246, 0.12) 0%, rgba(6, 182, 212, 0.08) 50%, rgba(59, 130, 246, 0.06) 100%)",
+        }}
+      />
+      <div
+        className="absolute inset-0 -z-10 opacity-60"
+        style={{
+          background:
+            "radial-gradient(ellipse 80% 50% at 50% 0%, rgba(59, 130, 246, 0.15), transparent 60%)",
+        }}
+      />
+
+      <div className="mx-auto max-w-6xl relative">
         <AnimatedSection>
           <SectionHeading>
             What People <span className="gradient-text">Say</span>
           </SectionHeading>
         </AnimatedSection>
 
-        <div className="grid gap-6 md:grid-cols-3">
-          {testimonials.map((testimonial, index) => (
-            <AnimatedSection key={testimonial.name} delay={index * 0.1}>
+        <Swiper
+          className="w-full"
+          modules={[Mousewheel, Autoplay]}
+          spaceBetween={20}
+          slidesPerView={1}
+          breakpoints={{
+            640: { slidesPerView: 2 },
+            768: { slidesPerView: 3 },
+          }}
+          grabCursor
+          loop
+          speed={400}
+          mousewheel={{ enabled: true, forceToAxis: true }}
+          autoplay={{
+            delay: 4000,
+            disableOnInteraction: false,
+          }}
+        >
+          {linkedInRecommendations.map((rec) => (
+            <SwiperSlide key={rec.id} style={{ height: CARD_MIN_HEIGHT }}>
               <motion.div
-                whileHover={{ y: -6 }}
-                className="group h-full rounded-xl border border-card-border bg-card p-6 transition-all hover:border-accent/30 hover:shadow-xl hover:shadow-accent/5"
+                className="h-full flex flex-col group"
+                style={{ height: CARD_MIN_HEIGHT }}
+                whileHover={{ y: -4 }}
+                whileTap={{ scale: 0.99 }}
               >
-                <div className="flex gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <HiStar key={i} size={16} className="text-yellow-500" />
-                  ))}
-                </div>
-
-                <blockquote className="text-sm text-muted-foreground leading-relaxed italic">
-                  &ldquo;{testimonial.content}&rdquo;
-                </blockquote>
-
-                <div className="flex items-center gap-3 mt-6 pt-4 border-t border-card-border">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-accent to-accent-secondary flex items-center justify-center text-white font-bold text-sm">
-                    {testimonial.name
-                      .split(" ")
-                      .map((n) => n[0])
-                      .join("")}
+                {/* Glassmorphism card - same height, clickable */}
+                <div
+                  role="button"
+                  tabIndex={0}
+                  onClick={() => openDetail(rec)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      openDetail(rec);
+                    }
+                  }}
+                  className="h-full flex flex-col text-left rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 transition-all duration-300 group-hover:border-white/20 group-hover:bg-white/[0.08] group-hover:shadow-xl group-hover:shadow-accent/10 cursor-pointer"
+                >
+                  <div className="flex items-start gap-4 mb-4 flex-shrink-0">
+                    <div className="flex-shrink-0 ring-2 ring-white/20 rounded-full overflow-hidden">
+                      <img
+                        src={rec.profilePhoto}
+                        alt={rec.name}
+                        width={56}
+                        height={56}
+                        className="w-14 h-14 object-cover"
+                      />
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <p className="text-sm font-semibold text-foreground truncate">
+                        {rec.name}
+                      </p>
+                      <p className="text-xs text-muted-foreground line-clamp-2">
+                        {rec.role}
+                        {rec.company ? ` at ${rec.company}` : ""}
+                      </p>
+                      {(rec.date ||
+                        rec.connectionDegree ||
+                        rec.relationship) && (
+                        <div className="mt-1 space-y-0.5">
+                          {(rec.date || rec.connectionDegree) && (
+                            <p className="text-[11px] text-muted-foreground/80 truncate">
+                              {[
+                                rec.date,
+                                rec.connectionDegree &&
+                                  `${rec.connectionDegree} connection`,
+                              ]
+                                .filter(Boolean)
+                                .join(" · ")}
+                            </p>
+                          )}
+                          {rec.relationship && (
+                            <p className="text-[11px] text-muted-foreground/80 truncate">
+                              {rec.relationship}
+                            </p>
+                          )}
+                        </div>
+                      )}
+                    </div>
+                    <a
+                      href={rec.linkedInUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="flex-shrink-0 p-2 rounded-lg text-[#0A66C2] bg-[#0A66C2]/10 hover:bg-[#0A66C2]/20 transition-colors"
+                      aria-label={`View ${rec.name}'s recommendation on LinkedIn`}
+                    >
+                      <SiLinkedin className="w-6 h-6" />
+                    </a>
                   </div>
-                  <div>
-                    <p className="text-sm font-semibold text-foreground">
-                      {testimonial.name}
-                    </p>
-                    <p className="text-xs text-muted-foreground">
-                      {testimonial.role} at {testimonial.company}
-                    </p>
-                  </div>
+
+                  <blockquote className="text-sm text-muted-foreground leading-relaxed italic line-clamp-5 flex-1 min-h-0 mt-0">
+                    &ldquo;{rec.content}&rdquo;
+                  </blockquote>
+
+                  <p className="text-xs text-accent/90 mt-3 flex-shrink-0">
+                    Click to read full recommendation
+                  </p>
                 </div>
               </motion.div>
-            </AnimatedSection>
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
+
+        <p className="text-center text-sm text-muted-foreground mt-6">
+          Auto-slides · Scroll, swipe or drag to see more · View all on{" "}
+          <a
+            href="https://www.linkedin.com/in/virajvimu/details/recommendations/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-accent hover:underline inline-flex items-center gap-1"
+          >
+            <SiLinkedin className="w-4 h-4" />
+            LinkedIn
+          </a>
+        </p>
       </div>
+
+      {selectedRec && <DetailModal rec={selectedRec} onClose={closeDetail} />}
     </section>
   );
 }

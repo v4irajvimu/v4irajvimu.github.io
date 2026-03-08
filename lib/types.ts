@@ -75,6 +75,22 @@ export interface Testimonial {
   avatar: string;
 }
 
+export interface LinkedInRecommendation {
+  id: string;
+  name: string;
+  role: string;
+  company: string;
+  content: string;
+  profilePhoto: string;
+  linkedInUrl: string;
+  /** Recommendation date, e.g. "February 2, 2024" */
+  date?: string;
+  /** Relationship context, e.g. "Yasoma managed Viraj Vimukthi directly" */
+  relationship?: string;
+  /** Connection degree, e.g. "1st" or "First degree connection" */
+  connectionDegree?: string;
+}
+
 export interface PersonalInfo {
   name: string;
   title: string;
