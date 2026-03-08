@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.7.0...v1.8.0) (2026-03-08)
+
+
+### Features
+
+* update Footer component to include package version and improve layout structure ([ee5071f](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/ee5071f2c69f1756315e07e7d4bec4163b1dd080))
+
 # [1.7.0](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.6.0...v1.7.0) (2026-03-08)
 
 
