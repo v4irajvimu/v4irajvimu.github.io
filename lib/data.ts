@@ -434,8 +434,13 @@ export const linkedInRecommendations: LinkedInRecommendation[] = [
     name: "Neelaka Rupun",
     role: "JS | React, Node + TS | NestJS | AWS | Serverless",
     company: "",
-    content:
-      "I have worked closely with Vimukthi and have consistently been impressed by his dedication, expertise, and leadership qualities. One of Vimukthi's standout qualities is his ability to rapidly learn and adapt to new technologies. In our time working together, he has mastered the serverless framework and GraphQL with remarkable speed, always seeking out the latest advancements to ensure our projects are on the cutting edge. He takes complete ownership of work, demonstrating a level of commitment and responsibility that sets a high standard for the entire team. His proficiency in frontend development is unparalleled, and he consistently provides invaluable guidance to team members, helping to elevate the overall quality of our output. In addition to his technical skills, he excels in planning and executing solutions and has a collaborative approach, actively engaging with team members to incorporate their ideas and perspectives. This inclusive style not only fosters a positive team environment but also leads to innovative and effective solutions. Vimukthi is an exceptional lead whose combination of rapid learning, ownership, technical expertise, and collaborative spirit makes him an invaluable asset to any team. I highly recommend Vimukthi for any role that requires a strong, knowledgeable, and inspiring leader.",
+    content: `I have worked closely with Vimukthi and have consistently been impressed by his dedication, expertise, and leadership qualities. One of Vimukthi's standout qualities is his ability to rapidly learn and adapt to new technologies. In our time working together, he has mastered the serverless framework and GraphQL with remarkable speed, always seeking out the latest advancements to ensure our projects are on the cutting edge.
+
+He takes complete ownership of work, demonstrating a level of commitment and responsibility that sets a high standard for the entire team. His proficiency in frontend development is unparalleled, and he consistently provides invaluable guidance to team members, helping to elevate the overall quality of our output.
+
+In addition to his technical skills, he excels in planning and executing solutions and has a collaborative approach, actively engaging with team members to incorporate their ideas and perspectives. This inclusive style not only fosters a positive team environment but also leads to innovative and effective solutions.
+
+Vimukthi is an exceptional lead whose combination of rapid learning, ownership, technical expertise, and collaborative spirit makes him an invaluable asset to any team. I highly recommend Vimukthi for any role that requires a strong, knowledgeable, and inspiring leader.`,
     profilePhoto: "https://media.licdn.com/dms/image/v2/D5603AQGplIPE8mtZ4Q/profile-displayphoto-shrink_800_800/B56ZZidz.SHsAc-/0/1745408704970?e=1774483200&v=beta&t=zsf4gfKmuGDjAtP6qHg_N3LbV4j4gVm0JuqXRoCkyBo",
     linkedInUrl: "https://www.linkedin.com/in/neelaka-rupun",
     date: "July 31, 2024",
@@ -447,8 +452,11 @@ export const linkedInRecommendations: LinkedInRecommendation[] = [
     name: "Yasoma Jayasinghe",
     role: "Senior IT Leader | Business Development Expert | Driving Strategic Formulation, Market Growth, and Cross-Functional Alignment to Deliver Sustainable Competitive Advantage",
     company: "",
-    content:
-      "I worked with Vimukthi on several projects, and he is one of the best people to have as a team member. I highly recommend him for his dedication and commitment, as he is a very methodical and practical person. His ability to adjust to evolving organizational needs helped us during hard times, and we were able to come up with innovative solutions to address the changing needs of the time. His ability to analyze and understand the subordinates helped to build a successful team during the team-forming stage and get the best out of them. Any team would be lucky to have Vimukthi in their organization. I wish him all the very best!!",
+    content: `I worked with Vimukthi on several projects, and he is one of the best people to have as a team member. I highly recommend him for his dedication and commitment, as he is a very methodical and practical person.
+His ability to adjust to evolving organizational needs helped us during hard times, and we were able to come up with innovative solutions to address the changing needs of the time.
+His ability to analyze and understand the subordinates helped to build a successful team during the team-forming stage and get the best out of them.
+Any team would be lucky to have Vimukthi in their organization.
+I wish him all the very best!!`,
     profilePhoto: "https://media.licdn.com/dms/image/v2/D5603AQEWBboDDvnAcA/profile-displayphoto-scale_200_200/B56ZfV0itZH8Ac-/0/1751639011000?e=1774483200&v=beta&t=kRqY2Rhtqkb3GWRRQZpaWxOTWbls2e-AT6tZdQe2208",
     linkedInUrl: "https://www.linkedin.com/in/yasoma/",
     date: "February 2, 2024",
@@ -460,8 +468,7 @@ export const linkedInRecommendations: LinkedInRecommendation[] = [
     name: "Jitesh Vaswani",
     role: "Principal Engineer Specializing in AI Integration",
     company: "",
-    content:
-      "Vimukhti is one of those that can plug and play in any project, with any technology, at any point in time! Wherever you have need, you can plug in Vimukhti and he WILL give you the deliverables! Sharp! Dedicated! Team Player! To top that, he has excellent communications skills! He lead 2 different apps for us at different times as well as worked in several projects! He has no hangups! Vimukhti is someone everybody listen to! He is that special engineer who doesn't need a title to show his abilities! Everybody knows! You would be lucky to find him a place in your company!",
+    content: `Vimukhti is one of those that can plug and play in any project, with any technology, at any point in time! Wherever you have need, you can plug in Vimukhti and he WILL give you the deliverables! Sharp! Dedicated! Team Player! To top that, he has excellent communications skills! He lead 2 different apps for us at different times as well as worked in several projects! He has no hangups! Vimukhti is someone everybody listen to! He is that special engineer who doesn't need a title to show his abilities! Everybody knows! You would be lucky to find him a place in your company!`,
     profilePhoto: "https://media.licdn.com/dms/image/v2/C4E03AQFq9XCguga-KQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1604947593197?e=1774483200&v=beta&t=YvR1BHVBT76-V2KSYzrVDdeKLNPn_bIRcBn1qycJQx8",
     linkedInUrl: "https://www.linkedin.com/in/vaswanijitesh/",
     date: "December 23, 2023",
