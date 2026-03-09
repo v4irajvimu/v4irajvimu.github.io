@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 import { personalInfo } from "@/lib/data";
 
+export const dynamic = "force-static";
+
 const baseUrl = "https://v4irajvimu.github.io";
 
 export default function manifest(): MetadataRoute.Manifest {
@@ -18,7 +20,13 @@ export default function manifest(): MetadataRoute.Manifest {
         src: "/images/avatar.jpg",
         sizes: "192x192",
         type: "image/jpeg",
-        purpose: "any maskable",
+        purpose: "any",
+      },
+      {
+        src: "/images/avatar.jpg",
+        sizes: "192x192",
+        type: "image/jpeg",
+        purpose: "maskable",
       },
     ],
     categories: ["portfolio", "personal"],
