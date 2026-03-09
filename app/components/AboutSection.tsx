@@ -12,6 +12,7 @@ import {
 import AnimatedSection from "./AnimatedSection";
 import SectionHeading from "./SectionHeading";
 import SectionGradientBg from "./SectionGradientBg";
+import Tilt from "react-parallax-tilt";
 
 const facts = [
   {
@@ -52,17 +53,29 @@ export default function AboutSection() {
             <div className="relative group">
               <div className="aspect-square rounded-2xl bg-gradient-to-br from-accent to-accent-secondary p-[2px]">
                 <div className="h-full w-full rounded-2xl bg-card overflow-hidden">
-                  <Image
-                    src="/images/vimukthi-jayasinghe-senior-software-engineer.webp"
-                    alt={`${personalInfo.name} - ${personalInfo.title}`}
-                    width={800}
-                    height={800}
-                    priority
-                    className="h-full w-full object-cover"
-                  />
+                  <Tilt
+                    tiltEnable={true}
+                    tiltMaxAngleX={15}
+                    tiltMaxAngleY={15}
+                    perspective={1500}
+                    scale={1}
+                    gyroscope={true}
+                    className="h-full w-full"
+                  >
+                    <div className="h-full w-full">
+                      <Image
+                        src="/images/vimukthi-jayasinghe-senior-software-engineer.webp"
+                        alt={`${personalInfo.name} - ${personalInfo.title}`}
+                        width={800}
+                        height={800}
+                        priority
+                        className="h-full w-full object-cover"
+                      />
+                    </div>
+                  </Tilt>
                 </div>
               </div>
-              <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-accent to-accent-secondary opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-20" />
+              <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-accent to-accent-secondary opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-20 pointer-events-none" />
             </div>
           </AnimatedSection>
 
@@ -75,22 +88,25 @@ export default function AboutSection() {
                 With a mastery of{" "}
                 <span className="text-foreground font-medium">JavaScript</span>,{" "}
                 <span className="text-foreground font-medium">TypeScript</span>,
-                and{" "}
-                <span className="text-foreground font-medium">Python</span>, I
-                build performant, accessible solutions using{" "}
+                and <span className="text-foreground font-medium">Python</span>,
+                I build performant, accessible solutions using{" "}
                 <span className="text-foreground font-medium">React</span> and{" "}
                 <span className="text-foreground font-medium">Next.js</span> on
                 the frontend and{" "}
-                <span className="text-foreground font-medium">Node.js</span> with{" "}
-                <span className="text-foreground font-medium">AWS Serverless</span>{" "}
+                <span className="text-foreground font-medium">Node.js</span>{" "}
+                with{" "}
+                <span className="text-foreground font-medium">
+                  AWS Serverless
+                </span>{" "}
                 (<span className="text-foreground font-medium">Lambda</span>,{" "}
-                <span className="text-foreground font-medium">DynamoDB</span>) on
-                the backend. I am passionate about clean code and high-end UX,
-                specialized in integrating{" "}
-                <span className="text-foreground font-medium">Generative AI</span>{" "}
-                and{" "}
-                <span className="text-foreground font-medium">LLMs</span> to move
-                beyond traditional development into the next generation of
+                <span className="text-foreground font-medium">DynamoDB</span>)
+                on the backend. I am passionate about clean code and high-end
+                UX, specialized in integrating{" "}
+                <span className="text-foreground font-medium">
+                  Generative AI
+                </span>{" "}
+                and <span className="text-foreground font-medium">LLMs</span> to
+                move beyond traditional development into the next generation of
                 intelligent, cloud-native applications.
               </p>
             </AnimatedSection>
