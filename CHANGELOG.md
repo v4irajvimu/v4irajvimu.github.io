@@ -1,3 +1,10 @@
+## [1.12.1](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.12.0...v1.12.1) (2026-03-09)
+
+
+### Bug Fixes
+
+* clean up AboutSection code for better readability and maintainability ([5e34a76](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/5e34a764003cdc2d55692393a5d8016cc70e203f))
+
 # [1.12.0](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.11.1...v1.12.0) (2026-03-09)
 
 
