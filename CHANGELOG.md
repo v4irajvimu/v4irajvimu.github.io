@@ -1,3 +1,10 @@
+# [1.11.0](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.10.0...v1.11.0) (2026-03-09)
+
+
+### Features
+
+* integrate react-parallax-tilt for enhanced visual effects in AboutSection ([e86a0e4](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/e86a0e423c141c9e7e48fa1d0b4de51bc609a854))
+
 # [1.10.0](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.9.1...v1.10.0) (2026-03-08)
 
 
