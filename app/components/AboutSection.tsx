@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useState, useCallback, useEffect } from "react";
 import { personalInfo } from "@/lib/data";
 import {
   HiLocationMarker,
@@ -38,6 +39,31 @@ const facts = [
 ];
 
 export default function AboutSection() {
+  const [gyroEnabled, setGyroEnabled] = useState(false);
+  const [needsPermission, setNeedsPermission] = useState(false);
+
+  useEffect(() => {
+    const req = (DeviceOrientationEvent as unknown as { requestPermission?: () => Promise<string> }).requestPermission;
+    if (typeof req !== "function") {
+      setGyroEnabled(true);
+    } else {
+      setNeedsPermission(true);
+    }
+  }, []);
+
+  const handleRequestGyro = useCallback(() => {
+    const req = (DeviceOrientationEvent as unknown as { requestPermission?: () => Promise<string> }).requestPermission;
+    if (typeof req === "function") {
+      req()
+        .then((permission) => {
+          if (permission === "granted") setGyroEnabled(true);
+        })
+        .catch(() => {});
+    } else {
+      setGyroEnabled(true);
+    }
+  }, []);
+
   return (
     <section id="about" className="relative py-24 px-4 overflow-hidden">
       <SectionGradientBg />
@@ -53,13 +79,21 @@ export default function AboutSection() {
             <div className="relative group">
               <div className="aspect-square rounded-2xl bg-gradient-to-br from-accent to-accent-secondary p-[2px]">
                 <div className="h-full w-full rounded-2xl bg-card overflow-hidden">
+                  <div
+                    className="h-full w-full"
+                    onClick={!gyroEnabled && needsPermission ? handleRequestGyro : undefined}
+                    onTouchStart={!gyroEnabled && needsPermission ? handleRequestGyro : undefined}
+                    role={!gyroEnabled && needsPermission ? "button" : undefined}
+                    aria-label={!gyroEnabled && needsPermission ? "Tap to enable 3D effect" : undefined}
+                  >
                   <Tilt
+                    key={gyroEnabled ? "gyro-on" : "gyro-off"}
                     tiltEnable={true}
-                    tiltMaxAngleX={15}
-                    tiltMaxAngleY={15}
-                    perspective={1500}
+                    tiltMaxAngleX={30}
+                    tiltMaxAngleY={30}
+                    perspective={1200}
                     scale={1}
-                    gyroscope={true}
+                    gyroscope={gyroEnabled}
                     className="h-full w-full"
                   >
                     <div className="h-full w-full">
@@ -73,6 +107,14 @@ export default function AboutSection() {
                       />
                     </div>
                   </Tilt>
+                  </div>
+                  {!gyroEnabled && needsPermission && (
+                    <div className="absolute inset-0 flex items-end justify-center pb-3 pointer-events-none">
+                      <span className="text-xs text-white/80 bg-black/40 px-2 py-1 rounded-full backdrop-blur-sm">
+                        Tap to enable 3D
+                      </span>
+                    </div>
+                  )}
                 </div>
               </div>
               <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-accent to-accent-secondary opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-20 pointer-events-none" />
