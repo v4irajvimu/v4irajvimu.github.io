@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.11.1...v1.12.0) (2026-03-09)
+
+
+### Features
+
+* add gyroscope support and permission handling in AboutSection for enhanced 3D effects ([9fd6e5c](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/9fd6e5ce5852488498b872d46356d306375ae4ba))
+
 ## [1.11.1](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.11.0...v1.11.1) (2026-03-09)
 
 
