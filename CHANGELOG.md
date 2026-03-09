@@ -1,3 +1,10 @@
+## [1.11.1](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.11.0...v1.11.1) (2026-03-09)
+
+
+### Bug Fixes
+
+* update image purpose attributes in manifest for better compatibility ([b6020f3](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/b6020f302b2d4bfb85b9c92d35f7cd61368f70a3))
+
 # [1.11.0](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.10.0...v1.11.0) (2026-03-09)
 
 
