@@ -1,3 +1,10 @@
+## [1.12.2](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.12.1...v1.12.2) (2026-03-09)
+
+
+### Bug Fixes
+
+* adjust layout and animation properties in ExperienceSection ([70cc3b4](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/70cc3b411393ec9a4f04c1586808060f18ffba1a))
+
 ## [1.12.1](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.12.0...v1.12.1) (2026-03-09)
 
 
