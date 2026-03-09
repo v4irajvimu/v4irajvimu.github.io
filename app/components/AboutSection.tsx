@@ -43,7 +43,11 @@ export default function AboutSection() {
   const [needsPermission, setNeedsPermission] = useState(false);
 
   useEffect(() => {
-    const req = (DeviceOrientationEvent as unknown as { requestPermission?: () => Promise<string> }).requestPermission;
+    const req = (
+      DeviceOrientationEvent as unknown as {
+        requestPermission?: () => Promise<string>;
+      }
+    ).requestPermission;
     if (typeof req !== "function") {
       setGyroEnabled(true);
     } else {
@@ -52,7 +56,11 @@ export default function AboutSection() {
   }, []);
 
   const handleRequestGyro = useCallback(() => {
-    const req = (DeviceOrientationEvent as unknown as { requestPermission?: () => Promise<string> }).requestPermission;
+    const req = (
+      DeviceOrientationEvent as unknown as {
+        requestPermission?: () => Promise<string>;
+      }
+    ).requestPermission;
     if (typeof req === "function") {
       req()
         .then((permission) => {
@@ -81,32 +89,46 @@ export default function AboutSection() {
                 <div className="h-full w-full rounded-2xl bg-card overflow-hidden">
                   <div
                     className="h-full w-full"
-                    onClick={!gyroEnabled && needsPermission ? handleRequestGyro : undefined}
-                    onTouchStart={!gyroEnabled && needsPermission ? handleRequestGyro : undefined}
-                    role={!gyroEnabled && needsPermission ? "button" : undefined}
-                    aria-label={!gyroEnabled && needsPermission ? "Tap to enable 3D effect" : undefined}
+                    onClick={
+                      !gyroEnabled && needsPermission
+                        ? handleRequestGyro
+                        : undefined
+                    }
+                    onTouchStart={
+                      !gyroEnabled && needsPermission
+                        ? handleRequestGyro
+                        : undefined
+                    }
+                    role={
+                      !gyroEnabled && needsPermission ? "button" : undefined
+                    }
+                    aria-label={
+                      !gyroEnabled && needsPermission
+                        ? "Tap to enable 3D effect"
+                        : undefined
+                    }
                   >
-                  <Tilt
-                    key={gyroEnabled ? "gyro-on" : "gyro-off"}
-                    tiltEnable={true}
-                    tiltMaxAngleX={30}
-                    tiltMaxAngleY={30}
-                    perspective={1200}
-                    scale={1}
-                    gyroscope={gyroEnabled}
-                    className="h-full w-full"
-                  >
-                    <div className="h-full w-full">
-                      <Image
-                        src="/images/vimukthi-jayasinghe-senior-software-engineer.webp"
-                        alt={`${personalInfo.name} - ${personalInfo.title}`}
-                        width={800}
-                        height={800}
-                        priority
-                        className="h-full w-full object-cover"
-                      />
-                    </div>
-                  </Tilt>
+                    <Tilt
+                      key={gyroEnabled ? "gyro-on" : "gyro-off"}
+                      tiltEnable={true}
+                      tiltMaxAngleX={20}
+                      tiltMaxAngleY={20}
+                      perspective={1200}
+                      scale={1}
+                      gyroscope={gyroEnabled}
+                      className="h-full w-full"
+                    >
+                      <div className="h-full w-full">
+                        <Image
+                          src="/images/vimukthi-jayasinghe-senior-software-engineer.webp"
+                          alt={`${personalInfo.name} - ${personalInfo.title}`}
+                          width={800}
+                          height={800}
+                          priority
+                          className="h-full w-full object-cover"
+                        />
+                      </div>
+                    </Tilt>
                   </div>
                   {!gyroEnabled && needsPermission && (
                     <div className="absolute inset-0 flex items-end justify-center pb-3 pointer-events-none">
