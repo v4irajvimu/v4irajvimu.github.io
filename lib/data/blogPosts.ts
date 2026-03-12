@@ -28,4 +28,13 @@ export const blogPosts: BlogPost[] = [
     readTime: "5 min read",
     platform: "Medium",
   },
+  {
+    title: "Why Senior Engineers Use Git Worktrees Instead of git stash",
+    excerpt:
+      "Git worktrees empower engineers to work on multiple branches of the same repository in parallel. By eliminating the need to constantly rely on git stash, developers can avoid confusion, stay focused on their tasks, and move faster in the development process.",
+    url: "https://medium.com/@viraj.vimu/why-senior-engineers-use-git-worktrees-instead-of-git-stash-6170010dc8f6",
+    date: "2026-03-12",
+    readTime: "5 min read",
+    platform: "Medium",
+  },
 ];
