@@ -1,3 +1,17 @@
+# [1.13.0](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.12.2...v1.13.0) (2026-03-12)
+
+
+### Bug Fixes
+
+* delegate data in to data folder ([9e95c3d](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/9e95c3d1ff80a0e2849e0d78bfbe8f3fbf0e8f53))
+* replace BlogCard with BlogPageContent for improved blog layout ([3ae31e7](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/3ae31e7464a9048309c7455f7d14c21f7141aaf1))
+
+
+### Features
+
+* add new blog post on the advantages of using Git worktrees ([4e3afaf](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/4e3afaf7c1da519a99a24f9636630e5e758db1a8))
+* update BlogSection to display latest posts and improve Navbar link handling ([30eb9f7](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/30eb9f7c2e2053d583b5433d33cdbacca636ccda))
+
 ## [1.12.2](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.12.1...v1.12.2) (2026-03-09)
 
 
