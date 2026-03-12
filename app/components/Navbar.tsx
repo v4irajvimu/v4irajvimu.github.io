@@ -90,7 +90,7 @@ export default function Navbar() {
                 >
                   {link.label}
                 </Link>
-              ) : (
+              ) : pathname === "/" ? (
                 <button
                   key={link.href}
                   onClick={() => handleClick(link.href)}
@@ -102,6 +102,18 @@ export default function Navbar() {
                 >
                   {link.label}
                 </button>
+              ) : (
+                <Link
+                  key={link.href}
+                  href={`/${link.href}`}
+                  className={`px-3 py-2 text-sm rounded-lg transition-all duration-200 ${
+                    isActive(link)
+                      ? "text-accent bg-accent/10"
+                      : "text-muted-foreground hover:text-foreground hover:bg-white/5"
+                  }`}
+                >
+                  {link.label}
+                </Link>
               )
             )}
           </div>
@@ -146,7 +158,7 @@ export default function Navbar() {
                   >
                     {link.label}
                   </Link>
-                ) : (
+                ) : pathname === "/" ? (
                   <motion.button
                     key={link.href}
                     initial={{ opacity: 0, x: -20 }}
@@ -161,6 +173,19 @@ export default function Navbar() {
                   >
                     {link.label}
                   </motion.button>
+                ) : (
+                  <Link
+                    key={link.href}
+                    href={`/${link.href}`}
+                    onClick={() => setIsMobileOpen(false)}
+                    className={`block w-full text-left px-3 py-2 text-sm rounded-lg transition-colors ${
+                      isActive(link)
+                        ? "text-accent bg-accent/10"
+                        : "text-muted-foreground hover:text-foreground hover:bg-white/5"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
                 )
               )}
             </div>
