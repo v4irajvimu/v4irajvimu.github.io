@@ -1,0 +1,9 @@
+export { personalInfo } from "./personalInfo";
+export { navLinks } from "./navLinks";
+export { socialLinks } from "./socialLinks";
+export { skillCategories } from "./skillCategories";
+export { experiences } from "./experiences";
+export { projects } from "./projects";
+export { blogPosts } from "./blogPosts";
+export { testimonials } from "./testimonials";
+export { linkedInRecommendations } from "./linkedInRecommendations";
