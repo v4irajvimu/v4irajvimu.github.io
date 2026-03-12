@@ -1,3 +1,10 @@
+## [1.13.1](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.13.0...v1.13.1) (2026-03-12)
+
+
+### Bug Fixes
+
+* enhance Navbar link handling for improved user experience ([11f5472](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/11f5472739e4d0adfe4e5f2f65204593b7c0eee5))
+
 # [1.13.0](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.12.2...v1.13.0) (2026-03-12)
 
 
