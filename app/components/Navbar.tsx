@@ -2,11 +2,14 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
 import { navLinks, personalInfo } from "@/lib/data";
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
@@ -15,7 +18,9 @@ export default function Navbar() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
 
-      const sections = navLinks.map((link) => link.href.replace("#", ""));
+      const sections = navLinks
+        .filter((link) => link.href.startsWith("#"))
+        .map((link) => link.href.replace("#", ""));
       for (const section of sections.reverse()) {
         const el = document.getElementById(section);
         if (el && window.scrollY >= el.offsetTop - 200) {
@@ -27,14 +32,20 @@ export default function Navbar() {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [pathname]);
 
   const handleClick = (href: string) => {
     setIsMobileOpen(false);
+    if (href.startsWith("/")) return;
     const el = document.querySelector(href);
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
     }
+  };
+
+  const isActive = (link: (typeof navLinks)[0]) => {
+    if (link.href.startsWith("/")) return pathname === link.href;
+    return activeSection === link.href.replace("#", "");
   };
 
   return (
@@ -50,38 +61,49 @@ export default function Navbar() {
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
-          <motion.a
-            href="#"
-            onClick={(e) => {
-              e.preventDefault();
-              window.scrollTo({ top: 0, behavior: "smooth" });
-            }}
-            className="flex items-center"
-            whileHover={{ scale: 1.05 }}
-          >
-            <Image
+          <Link href="/" className="flex items-center" aria-label="Home">
+            <motion.span
+              whileHover={{ scale: 1.05 }}
+              className="block"
+            >
+              <Image
               src="/images/vimukthi-jayasinghe-logo.png"
               alt={`${personalInfo.name} logo`}
               width={80}
               height={80}
               className="rounded-full drop-shadow-[0_0_14px_rgba(6,182,212,0.5)] hover:drop-shadow-[0_0_20px_rgba(6,182,212,0.7)] transition-all duration-300"
             />
-          </motion.a>
+            </motion.span>
+          </Link>
 
           <div className="hidden md:flex items-center gap-1">
-            {navLinks.map((link) => (
-              <button
-                key={link.href}
-                onClick={() => handleClick(link.href)}
-                className={`px-3 py-2 text-sm rounded-lg transition-all duration-200 ${
-                  activeSection === link.href.replace("#", "")
-                    ? "text-accent bg-accent/10"
-                    : "text-muted-foreground hover:text-foreground hover:bg-white/5"
-                }`}
-              >
-                {link.label}
-              </button>
-            ))}
+            {navLinks.map((link) =>
+              link.href.startsWith("/") ? (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`px-3 py-2 text-sm rounded-lg transition-all duration-200 ${
+                    isActive(link)
+                      ? "text-accent bg-accent/10"
+                      : "text-muted-foreground hover:text-foreground hover:bg-white/5"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <button
+                  key={link.href}
+                  onClick={() => handleClick(link.href)}
+                  className={`px-3 py-2 text-sm rounded-lg transition-all duration-200 ${
+                    isActive(link)
+                      ? "text-accent bg-accent/10"
+                      : "text-muted-foreground hover:text-foreground hover:bg-white/5"
+                  }`}
+                >
+                  {link.label}
+                </button>
+              )
+            )}
           </div>
 
           <button
@@ -110,22 +132,37 @@ export default function Navbar() {
             className="md:hidden glass border-t border-card-border"
           >
             <div className="px-4 py-3 space-y-1">
-              {navLinks.map((link, i) => (
-                <motion.button
-                  key={link.href}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.05 }}
-                  onClick={() => handleClick(link.href)}
-                  className={`block w-full text-left px-3 py-2 text-sm rounded-lg transition-colors ${
-                    activeSection === link.href.replace("#", "")
-                      ? "text-accent bg-accent/10"
-                      : "text-muted-foreground hover:text-foreground hover:bg-white/5"
-                  }`}
-                >
-                  {link.label}
-                </motion.button>
-              ))}
+              {navLinks.map((link, i) =>
+                link.href.startsWith("/") ? (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setIsMobileOpen(false)}
+                    className={`block w-full text-left px-3 py-2 text-sm rounded-lg transition-colors ${
+                      isActive(link)
+                        ? "text-accent bg-accent/10"
+                        : "text-muted-foreground hover:text-foreground hover:bg-white/5"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                ) : (
+                  <motion.button
+                    key={link.href}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.05 }}
+                    onClick={() => handleClick(link.href)}
+                    className={`block w-full text-left px-3 py-2 text-sm rounded-lg transition-colors ${
+                      isActive(link)
+                        ? "text-accent bg-accent/10"
+                        : "text-muted-foreground hover:text-foreground hover:bg-white/5"
+                    }`}
+                  >
+                    {link.label}
+                  </motion.button>
+                )
+              )}
             </div>
           </motion.div>
         )}
