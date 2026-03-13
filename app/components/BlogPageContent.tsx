@@ -71,11 +71,11 @@ export default function BlogPageContent() {
             ← Back to home
           </Link>
           <h1 className="text-4xl font-bold tracking-tight">
-            All <span className="gradient-text">Blog Posts</span>
+            Blog <span className="gradient-text">Posts</span>
           </h1>
           <p className="text-muted-foreground mt-2">
-            All blog posts by Vimukthi Jayasinghe. Click on the blog post to
-            read more.
+            Thoughts, experiments, and deep dives into modern software
+            engineering practices.
           </p>
         </div>
 
