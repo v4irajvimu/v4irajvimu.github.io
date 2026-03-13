@@ -6,6 +6,7 @@ import AnimatedSection from "./AnimatedSection";
 import SectionHeading from "./SectionHeading";
 import BlogCard from "./BlogCard";
 import { HiArrowRight } from "react-icons/hi";
+import SectionGradientBg from "./SectionGradientBg";
 
 const LATEST_POSTS_COUNT = 3;
 
@@ -15,11 +16,12 @@ export default function BlogSection() {
     .slice(0, LATEST_POSTS_COUNT);
 
   return (
-    <section id="blog" className="py-24 px-4">
+    <section id="blog" className="relative py-24 px-4 overflow-hidden">
+      <SectionGradientBg />
       <div className="mx-auto max-w-6xl">
         <AnimatedSection>
           <SectionHeading>
-            Latest <span className="gradient-text">Blog Posts</span>
+            Blog <span className="gradient-text">Posts</span>
           </SectionHeading>
         </AnimatedSection>
 
