@@ -3,13 +3,14 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
 import { navLinks, personalInfo } from "@/lib/data";
 
 export default function Navbar() {
   const pathname = usePathname();
+  const router = useRouter();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
@@ -61,7 +62,17 @@ export default function Navbar() {
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
-          <Link href="/" className="flex items-center" aria-label="Home">
+          <Link
+            href="/"
+            className="flex items-center"
+            aria-label="Home"
+            onClick={(e) => {
+              if (pathname !== "/") {
+                e.preventDefault();
+                router.push("/");
+              }
+            }}
+          >
             <motion.span
               whileHover={{ scale: 1.05 }}
               className="block"
