@@ -1,3 +1,15 @@
+## [1.13.2](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.13.1...v1.13.2) (2026-03-13)
+
+
+### Bug Fixes
+
+* enhance Navbar link behavior to prevent unnecessary navigation ([fde622b](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/fde622b337f3fa34c5e1f6bdd202bfcccb405acf))
+* improve Navbar link behavior to scroll to top smoothly when on the homepage ([18b7114](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/18b7114c26efad75925940e2b1fd0a30a076b0e2))
+* simplify ExperienceSection by replacing inline code component ([fe7807e](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/fe7807e76d7701b741096e8d14a921224df52abe))
+* update BlogPageContent header and description for clarity and engagement ([91de9bc](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/91de9bc6b177a3be293605481d9648fe5ba12d51))
+* update ExperienceCard component for improved readability and structure ([73a5d18](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/73a5d1808db83a90130aa1b339628ab331bab65d))
+* update page layout to include BlogSection and adjust Navbar links ([5d39955](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/5d3995528b0945c1cf784aaecb158820c26f801f))
+
 ## [1.13.1](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.13.0...v1.13.1) (2026-03-12)
 
 
