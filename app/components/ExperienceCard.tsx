@@ -12,7 +12,10 @@ interface ExperienceCardProps {
   index: number;
 }
 
-export default function ExperienceCard({ experience: exp, index }: ExperienceCardProps) {
+export default function ExperienceCard({
+  experience: exp,
+  index,
+}: ExperienceCardProps) {
   const isLeft = index % 2 === 0;
   const hasPromotions = exp.roles.length > 1;
 
@@ -22,22 +25,18 @@ export default function ExperienceCard({ experience: exp, index }: ExperienceCar
         isLeft ? "md:pr-12 md:ml-0" : "md:pl-12 md:ml-auto"
       } pl-0 pr-0 md:pl-0`}
     >
-      <motion.a
+      <a
         href={exp.url}
         target="_blank"
         rel="noopener noreferrer"
-        initial={{ scale: 0.5 }}
-        whileInView={{ scale: 1.3 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.2, type: "spring" }}
-        className={`absolute top-0 w-11 h-11 rounded-full border-2 border-accent overflow-hidden z-10 left-1/2 -translate-x-1/2 md:left-auto cursor-pointer transition-all duration-300 group-hover/exp:scale-120 group-hover/exp:-translate-y-1 group-hover/exp:shadow-lg group-hover/exp:shadow-accent/30 ${
+        className={`absolute top-0 w-16 h-16 rounded-full border-2 border-accent overflow-hidden z-10 left-1/2 -translate-x-1/2 md:left-auto cursor-pointer transition-all duration-300 group-hover/exp:scale-120 group-hover/exp:-translate-y-1 group-hover/exp:shadow-lg group-hover/exp:shadow-accent/30 ${
           isLeft
             ? "md:right-0 md:translate-x-1/2"
             : "md:left-[-4.375rem] md:translate-x-[-4.375rem]"
         }`}
       >
         <CompanyLogo src={exp.logo} alt={exp.company} />
-      </motion.a>
+      </a>
 
       <AnimatedSection delay={index * 0.15}>
         <motion.div
