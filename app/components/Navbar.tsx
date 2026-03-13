@@ -70,6 +70,9 @@ export default function Navbar() {
               if (pathname !== "/") {
                 e.preventDefault();
                 router.push("/");
+              } else {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
               }
             }}
           >
