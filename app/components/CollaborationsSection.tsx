@@ -100,7 +100,7 @@ export default function CollaborationsSection() {
                 height={195}
                 loading="lazy"
                 decoding="async"
-                className="w-1/2 max-w-full h-auto rounded-lg shrink-0"
+                className="w-full md:w-1/2 max-w-full h-auto rounded-lg shrink-0"
               />
             </a>
           </AnimatedSection>
