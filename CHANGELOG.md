@@ -1,3 +1,10 @@
+## [1.14.1](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.14.0...v1.14.1) (2026-03-24)
+
+
+### Bug Fixes
+
+* replace SiLinkedin with FaLinkedin across multiple components for consistency ([d060f01](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/d060f01af4209ccf61367f06af3a7c56e46ead60))
+
 # [1.14.0](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.13.2...v1.14.0) (2026-03-24)
 
 
