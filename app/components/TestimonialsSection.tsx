@@ -2,7 +2,7 @@
 
 import { useState, useCallback, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { SiLinkedin } from "react-icons/si";
+import { FaLinkedin } from "react-icons/fa6";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Mousewheel, Autoplay } from "swiper/modules";
 import { linkedInRecommendations } from "@/lib/data";
@@ -103,7 +103,7 @@ function DetailModal({
                   className="flex-shrink-0 p-2 rounded-lg text-[#0A66C2] bg-[#0A66C2]/10 hover:bg-[#0A66C2]/20 transition-colors"
                   aria-label={`View ${rec.name}'s recommendation on LinkedIn`}
                 >
-                  <SiLinkedin className="w-6 h-6 sm:w-7 sm:h-7" />
+                  <FaLinkedin className="w-6 h-6 sm:w-7 sm:h-7" />
                 </a>
               </div>
 
@@ -118,7 +118,7 @@ function DetailModal({
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-sm text-accent hover:underline"
                 >
-                  <SiLinkedin className="w-4 h-4" />
+                  <FaLinkedin className="w-4 h-4" />
                   View on LinkedIn
                 </a>
                 <button
@@ -199,7 +199,7 @@ export default function TestimonialsSection() {
             rel="noopener noreferrer"
             className="text-accent hover:underline inline-flex items-center gap-1"
           >
-            <SiLinkedin className="w-4 h-4" />
+            <FaLinkedin className="w-4 h-4" />
             LinkedIn
           </a>
         </p>

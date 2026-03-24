@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { SiLinkedin } from "react-icons/si";
+import { FaLinkedin } from "react-icons/fa6";
 import type { LinkedInRecommendation } from "@/lib/types";
 
 const DEFAULT_MIN_HEIGHT = 340;
@@ -79,7 +79,7 @@ export default function TestimonialCard({
             className="flex-shrink-0 p-2 rounded-lg text-[#0A66C2] bg-[#0A66C2]/10 hover:bg-[#0A66C2]/20 transition-colors"
             aria-label={`View ${rec.name}'s recommendation on LinkedIn`}
           >
-            <SiLinkedin className="w-6 h-6" />
+            <FaLinkedin className="w-6 h-6" />
           </a>
         </div>
 

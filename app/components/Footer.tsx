@@ -1,9 +1,9 @@
 "use client";
 
 import { personalInfo, socialLinks } from "@/lib/data";
+import { FaLinkedin } from "react-icons/fa6";
 import {
   SiGithub,
-  SiLinkedin,
   SiX,
   SiMedium,
   SiDevdotto,
@@ -16,7 +16,7 @@ import packageJson from "../../package.json";
 
 const socialIconMap: Record<string, IconType> = {
   github: SiGithub,
-  linkedin: SiLinkedin,
+  linkedin: FaLinkedin,
   twitter: SiX,
   medium: SiMedium,
   devto: SiDevdotto,

@@ -8,9 +8,9 @@ import {
   HiLocationMarker,
   HiExternalLink,
 } from "react-icons/hi";
+import { FaLinkedin } from "react-icons/fa6";
 import {
   SiGithub,
-  SiLinkedin,
   SiX,
   SiMedium,
   SiDevdotto,
@@ -25,7 +25,7 @@ import SectionGradientBg from "./SectionGradientBg";
 
 const socialIconMap: Record<string, IconType> = {
   github: SiGithub,
-  linkedin: SiLinkedin,
+  linkedin: FaLinkedin,
   twitter: SiX,
   medium: SiMedium,
   devto: SiDevdotto,
