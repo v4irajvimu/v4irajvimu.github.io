@@ -1,3 +1,10 @@
+## [1.14.2](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.14.1...v1.14.2) (2026-03-24)
+
+
+### Bug Fixes
+
+* update image class for responsive design in CollaborationsSection ([caa8d3d](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/caa8d3dfa4571cac55a98ad95db649a083710a26))
+
 ## [1.14.1](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.14.0...v1.14.1) (2026-03-24)
 
 
