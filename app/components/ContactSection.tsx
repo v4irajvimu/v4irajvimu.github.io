@@ -21,6 +21,7 @@ import {
 import { IconType } from "react-icons";
 import AnimatedSection from "./AnimatedSection";
 import SectionHeading from "./SectionHeading";
+import SectionGradientBg from "./SectionGradientBg";
 
 const socialIconMap: Record<string, IconType> = {
   github: SiGithub,
@@ -35,7 +36,8 @@ const socialIconMap: Record<string, IconType> = {
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="py-24 px-4">
+    <section id="contact" className="relative py-24 px-4 overflow-hidden">
+      <SectionGradientBg />
       <div className="mx-auto max-w-6xl">
         <AnimatedSection>
           <SectionHeading>
