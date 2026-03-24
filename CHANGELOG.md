@@ -1,3 +1,15 @@
+# [1.14.0](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.13.2...v1.14.0) (2026-03-24)
+
+
+### Bug Fixes
+
+* clean up package-lock.json by removing unused sharp dependencies ([3a1ec2a](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/3a1ec2a9ebbb2dd1d116db9eeae780eafaff643b))
+
+
+### Features
+
+* add collaborations section with heatmap ([bdae5d1](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/bdae5d178cbaacfb509c95149d3b5f0d1ec71e73))
+
 ## [1.13.2](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.13.1...v1.13.2) (2026-03-13)
 
 
