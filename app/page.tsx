@@ -1,14 +1,32 @@
+import dynamic from "next/dynamic";
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
 import AboutSection from "./components/AboutSection";
 import SkillsSection from "./components/SkillsSection";
-import ExperienceSection from "./components/ExperienceSection";
 // import ProjectsSection from "./components/ProjectsSection";
 import BlogSection from "./components/BlogSection";
-import CollaborationsSection from "./components/CollaborationsSection";
-import TestimonialsSection from "./components/TestimonialsSection";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
+import {
+  CollaborationsSectionPlaceholder,
+  ExperienceSectionPlaceholder,
+  TestimonialsSectionPlaceholder,
+} from "./components/DeferredSectionPlaceholders";
+
+const ExperienceSection = dynamic(
+  () => import("./components/ExperienceSection"),
+  { loading: () => <ExperienceSectionPlaceholder /> },
+);
+
+const TestimonialsSection = dynamic(
+  () => import("./components/TestimonialsSection"),
+  { loading: () => <TestimonialsSectionPlaceholder /> },
+);
+
+const CollaborationsSection = dynamic(
+  () => import("./components/CollaborationsSection"),
+  { loading: () => <CollaborationsSectionPlaceholder /> },
+);
 
 export default function Home() {
   return (
