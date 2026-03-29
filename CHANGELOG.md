@@ -1,3 +1,10 @@
+# [1.15.0](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.14.2...v1.15.0) (2026-03-29)
+
+
+### Features
+
+* defer github heatmap until visible or idle ([28ce010](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/28ce01015277d90c49bebd08172e039616e1c1d5))
+
 ## [1.14.2](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.14.1...v1.14.2) (2026-03-24)
 
 
