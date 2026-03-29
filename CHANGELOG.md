@@ -1,3 +1,10 @@
+# [1.16.0](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.15.1...v1.16.0) (2026-03-29)
+
+
+### Features
+
+* recommendation avatars pipeline and perf ([efde6b1](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/efde6b10543c0fdc5f69c5a6a869f993ea20aa98))
+
 ## [1.15.1](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.15.0...v1.15.1) (2026-03-29)
 
 
