@@ -113,7 +113,7 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <a
+          {/* <a
             href="#projects"
             className="group inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-medium text-white transition-all hover:bg-accent/90 hover:shadow-lg hover:shadow-accent/25"
           >
@@ -121,7 +121,7 @@ export default function HeroSection() {
             <span className="transition-transform group-hover:translate-x-1">
               &rarr;
             </span>
-          </a>
+          </a> */}
           <a
             href="#contact"
             className="inline-flex items-center gap-2 rounded-full border border-card-border px-6 py-3 text-sm font-medium text-foreground transition-all hover:bg-white/5 hover:border-muted"

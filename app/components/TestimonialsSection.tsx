@@ -1,19 +1,27 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { useState, useCallback, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaLinkedin } from "react-icons/fa6";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Mousewheel, Autoplay } from "swiper/modules";
-import { linkedInRecommendations } from "@/lib/data";
 import type { LinkedInRecommendation } from "@/lib/types";
 import AnimatedSection from "./AnimatedSection";
 import SectionHeading from "./SectionHeading";
-import TestimonialCard from "./TestimonialCard";
 import SectionGradientBg from "./SectionGradientBg";
-import "swiper/css";
+import RecommendationAvatar from "./RecommendationAvatar";
 
-const CARD_MIN_HEIGHT = 340;
+const TestimonialsCarousel = dynamic(
+  () => import("./TestimonialsCarousel"),
+  {
+    ssr: false,
+    loading: () => (
+      <div
+        className="h-[340px] w-full rounded-xl border border-card-border bg-card/30 animate-pulse"
+        aria-hidden
+      />
+    ),
+  },
+);
 
 function DetailModal({
   rec,
@@ -59,12 +67,13 @@ function DetailModal({
             <div className="p-4 sm:p-6">
               <div className="flex items-start gap-3 sm:gap-4 mb-4">
                 <div className="flex-shrink-0 ring-2 ring-white/20 rounded-full overflow-hidden">
-                  <img
-                    src={rec.profilePhoto}
-                    alt={rec.name}
+                  <RecommendationAvatar
+                    name={rec.name}
+                    localSrc={rec.profilePhotoLocal}
+                    remoteSrc={rec.profilePhoto}
                     width={64}
                     height={64}
-                    className="w-14 h-14 sm:w-16 sm:h-16 object-cover"
+                    className="h-14 w-14 sm:h-16 sm:w-16 object-cover"
                   />
                 </div>
                 <div className="min-w-0 flex-1">
@@ -162,37 +171,10 @@ export default function TestimonialsSection() {
           </SectionHeading>
         </AnimatedSection>
 
-        <Swiper
-          className="w-full"
-          modules={[Mousewheel, Autoplay]}
-          spaceBetween={20}
-          slidesPerView={1}
-          breakpoints={{
-            640: { slidesPerView: 2 },
-            768: { slidesPerView: 3 },
-          }}
-          grabCursor
-          loop
-          speed={400}
-          mousewheel={{ enabled: true, forceToAxis: true }}
-          autoplay={{
-            delay: 4000,
-            disableOnInteraction: false,
-          }}
-        >
-          {linkedInRecommendations.map((rec) => (
-            <SwiperSlide key={rec.id} style={{ height: CARD_MIN_HEIGHT }}>
-              <TestimonialCard
-                rec={rec}
-                onSelect={() => openDetail(rec)}
-                minHeight={CARD_MIN_HEIGHT}
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+        <TestimonialsCarousel onSelect={openDetail} />
 
         <p className="text-center text-sm text-muted-foreground mt-6">
-          Auto-slides · Scroll, swipe or drag to see more · View all on{" "}
+          Auto-plays when in view · Scroll, swipe or drag · View all on{" "}
           <a
             href="https://www.linkedin.com/in/virajvimu/details/recommendations/"
             target="_blank"

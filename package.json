@@ -3,6 +3,8 @@
   "version": "1.15.1",
   "private": true,
   "scripts": {
+    "avatars:download": "node scripts/download-recommendation-avatars.mjs",
+    "avatars:sync-urls": "node scripts/sync-recommendation-avatar-urls-from-data.mjs",
     "dev": "next dev",
     "build": "next build",
     "postbuild": "next-sitemap",

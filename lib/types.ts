@@ -81,7 +81,9 @@ export interface LinkedInRecommendation {
   role: string;
   company: string;
   content: string;
+  /** LinkedIn CDN URLs expire; prefer `profilePhotoLocal` for stable images. */
   profilePhoto: string;
+  profilePhotoLocal?: string;
   linkedInUrl: string;
   /** Recommendation date, e.g. "February 2, 2024" */
   date?: string;

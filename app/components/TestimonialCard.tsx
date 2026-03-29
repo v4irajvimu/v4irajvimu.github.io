@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { FaLinkedin } from "react-icons/fa6";
 import type { LinkedInRecommendation } from "@/lib/types";
+import RecommendationAvatar from "./RecommendationAvatar";
 
 const DEFAULT_MIN_HEIGHT = 340;
 
@@ -38,12 +39,13 @@ export default function TestimonialCard({
       >
         <div className="flex items-start gap-4 mb-4 flex-shrink-0">
           <div className="flex-shrink-0 ring-2 ring-white/20 rounded-full overflow-hidden">
-            <img
-              src={rec.profilePhoto}
-              alt={rec.name}
+            <RecommendationAvatar
+              name={rec.name}
+              localSrc={rec.profilePhotoLocal}
+              remoteSrc={rec.profilePhoto}
               width={56}
               height={56}
-              className="w-14 h-14 object-cover"
+              className="h-14 w-14 object-cover"
             />
           </div>
           <div className="min-w-0 flex-1">

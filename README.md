@@ -1,5 +1,9 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Recommendation avatars (LinkedIn)
+
+Testimonial profile images are synced from a checked-in URL list into `public/images/recommendations/` so LinkedIn CDN links do not expire on the live site. See **[scripts/README-recommendation-avatars.md](scripts/README-recommendation-avatars.md)** for how the script, manifest, and GitHub Action work.
+
 ## Getting Started
 
 First, run the development server:
