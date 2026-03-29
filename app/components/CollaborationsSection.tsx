@@ -4,7 +4,7 @@
 
 import { socialLinks } from "@/lib/data";
 import AnimatedSection from "./AnimatedSection";
-import GitHubContributionHeatmap from "./GitHubContributionHeatmap";
+import LazyGitHubContributionHeatmap from "./LazyGitHubContributionHeatmap";
 import SectionHeading from "./SectionHeading";
 
 const THEME = "merko";
@@ -72,7 +72,7 @@ export default function CollaborationsSection() {
           {/* Contribution Calendar */}
           <AnimatedSection delay={0.25}>
             <div className={heatmapCardClass}>
-              <GitHubContributionHeatmap username={user} />
+              <LazyGitHubContributionHeatmap username={user} />
               <p className="mt-4 text-center">
                 <a
                   href={githubUrl}
