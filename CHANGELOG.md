@@ -1,3 +1,10 @@
+## [1.15.1](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.15.0...v1.15.1) (2026-03-29)
+
+
+### Bug Fixes
+
+* defer heavy sections with next dynamic ([f0e4891](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/f0e4891d333d26a714d703080253745a4bf3dcd1))
+
 # [1.15.0](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.14.2...v1.15.0) (2026-03-29)
 
 
