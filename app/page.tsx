@@ -22,10 +22,10 @@ const TestimonialsSection = dynamic(
   { loading: () => <TestimonialsSectionPlaceholder /> },
 );
 
-// const CollaborationsSection = dynamic(
-//   () => import("./components/CollaborationsSection"),
-//   { loading: () => <CollaborationsSectionPlaceholder /> },
-// );
+const CollaborationsSection = dynamic(
+  () => import("./components/CollaborationsSection"),
+  { loading: () => <CollaborationsSectionPlaceholder /> },
+);
 
 export default function Home() {
   return (
@@ -39,7 +39,7 @@ export default function Home() {
         <ExperienceSection />
         {/* <ProjectsSection /> */}
         <TestimonialsSection />
-        {/* <CollaborationsSection /> */}
+        <CollaborationsSection />
         <ContactSection />
       </main>
       <Footer />
