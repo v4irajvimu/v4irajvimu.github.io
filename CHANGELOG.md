@@ -1,3 +1,10 @@
+## [1.16.2](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.16.1...v1.16.2) (2026-04-01)
+
+
+### Bug Fixes
+
+* comment out CollaborationsSection and related nav link ([53b7845](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/53b7845de629b704256d5878623f455c53d48b79))
+
 ## [1.16.1](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.16.0...v1.16.1) (2026-03-29)
 
 
