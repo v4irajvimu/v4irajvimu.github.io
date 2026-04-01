@@ -1,3 +1,10 @@
+## [1.16.5](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.16.4...v1.16.5) (2026-04-01)
+
+
+### Bug Fixes
+
+* add missing collaborations placeholder import ([2885d53](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/2885d53269bd2da8d94c25f8d83e94d81b640b45))
+
 ## [1.16.4](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.16.3...v1.16.4) (2026-04-01)
 
 
