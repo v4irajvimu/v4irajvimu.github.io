@@ -1,3 +1,10 @@
+## [1.16.3](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.16.2...v1.16.3) (2026-04-01)
+
+
+### Bug Fixes
+
+* trim mobile jank on home first load ([6af11b8](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/6af11b8f3f74070a36e01dbbae4b41de506ed42a))
+
 ## [1.16.2](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.16.1...v1.16.2) (2026-04-01)
 
 
