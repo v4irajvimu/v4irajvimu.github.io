@@ -41,6 +41,16 @@ const facts = [
 export default function AboutSection() {
   const [gyroEnabled, setGyroEnabled] = useState(false);
   const [needsPermission, setNeedsPermission] = useState(false);
+  /** 3D tilt is heavy on touch GPUs; keep it for tablet/desktop only. */
+  const [tiltDesktop, setTiltDesktop] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 768px)");
+    const sync = () => setTiltDesktop(mq.matches);
+    sync();
+    mq.addEventListener("change", sync);
+    return () => mq.removeEventListener("change", sync);
+  }, []);
 
   useEffect(() => {
     const req = (
@@ -110,12 +120,12 @@ export default function AboutSection() {
                   >
                     <Tilt
                       key={gyroEnabled ? "gyro-on" : "gyro-off"}
-                      tiltEnable={true}
+                      tiltEnable={tiltDesktop}
                       tiltMaxAngleX={20}
                       tiltMaxAngleY={20}
                       perspective={1200}
                       scale={1}
-                      gyroscope={gyroEnabled}
+                      gyroscope={gyroEnabled && tiltDesktop}
                       className="h-full w-full"
                     >
                       <div className="h-full w-full">

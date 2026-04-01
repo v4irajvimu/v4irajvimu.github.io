@@ -8,7 +8,6 @@ import BlogSection from "./components/BlogSection";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
 import {
-  CollaborationsSectionPlaceholder,
   ExperienceSectionPlaceholder,
   TestimonialsSectionPlaceholder,
 } from "./components/DeferredSectionPlaceholders";

@@ -9,8 +9,31 @@ export default function HeroSection() {
   const [roleIndex, setRoleIndex] = useState(0);
   const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
+  /** Defer typing until after first paint / idle so mobile isn’t fighting constant re-renders. */
+  const [typingEnabled, setTypingEnabled] = useState(false);
 
   useEffect(() => {
+    let cancelled = false;
+    const start = () => {
+      if (!cancelled) setTypingEnabled(true);
+    };
+    if (typeof window !== "undefined" && "requestIdleCallback" in window) {
+      const id = requestIdleCallback(start, { timeout: 1500 });
+      return () => {
+        cancelled = true;
+        cancelIdleCallback(id);
+      };
+    }
+    const id = setTimeout(start, 400);
+    return () => {
+      cancelled = true;
+      clearTimeout(id);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!typingEnabled) return;
+
     const currentRole = personalInfo.tagline[roleIndex];
     let timeout: NodeJS.Timeout;
 
@@ -33,15 +56,24 @@ export default function HeroSection() {
     }
 
     return () => clearTimeout(timeout);
-  }, [displayText, isDeleting, roleIndex]);
+  }, [displayText, isDeleting, roleIndex, typingEnabled]);
+
+  const taglineVisible =
+    !typingEnabled
+      ? personalInfo.tagline[0]
+      : displayText.length > 0
+        ? displayText
+        : roleIndex === 0
+          ? personalInfo.tagline[0]
+          : "";
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated background */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent/20 rounded-full blur-[128px] animate-pulse-glow" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent-secondary/20 rounded-full blur-[128px] animate-pulse-glow [animation-delay:1.5s]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-500/10 rounded-full blur-[128px] animate-pulse-glow [animation-delay:3s]" />
+      {/* Animated background — large blurs + opacity animation are costly on mobile GPUs */}
+      <div className="absolute inset-0 max-md:pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-52 h-52 sm:w-72 md:w-96 sm:h-72 md:h-96 bg-accent/20 rounded-full blur-[40px] sm:blur-[72px] md:blur-[128px] max-md:opacity-40 md:animate-pulse-glow motion-reduce:opacity-40 motion-reduce:animate-none" />
+        <div className="absolute bottom-1/4 right-1/4 w-52 h-52 sm:w-72 md:w-96 sm:h-72 md:h-96 bg-accent-secondary/20 rounded-full blur-[40px] sm:blur-[72px] md:blur-[128px] max-md:opacity-40 md:animate-pulse-glow md:[animation-delay:1.5s] motion-reduce:opacity-40 motion-reduce:animate-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[min(90vw,280px)] h-[min(90vw,280px)] md:w-[600px] md:h-[600px] bg-purple-500/10 rounded-full blur-[40px] sm:blur-[72px] md:blur-[128px] max-md:opacity-35 md:animate-pulse-glow md:[animation-delay:3s] motion-reduce:opacity-35 motion-reduce:animate-none" />
       </div>
 
       {/* Grid pattern overlay */}
@@ -93,7 +125,7 @@ export default function HeroSection() {
           className="mt-4 h-10 sm:h-12"
         >
           <span className="text-xl sm:text-2xl text-muted-foreground font-mono">
-            {displayText}
+            {taglineVisible}
             <span className="animate-pulse text-accent">|</span>
           </span>
         </motion.div>

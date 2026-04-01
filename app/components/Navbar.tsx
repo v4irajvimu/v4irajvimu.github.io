@@ -16,22 +16,29 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        ticking = false;
+        setIsScrolled(window.scrollY > 50);
 
-      const sections = navLinks
-        .filter((link) => link.href.startsWith("#"))
-        .map((link) => link.href.replace("#", ""));
-      for (const section of sections.reverse()) {
-        const el = document.getElementById(section);
-        if (el && window.scrollY >= el.offsetTop - 200) {
-          setActiveSection(section);
-          break;
+        const sections = navLinks
+          .filter((link) => link.href.startsWith("#"))
+          .map((link) => link.href.replace("#", ""));
+        for (const section of sections.reverse()) {
+          const el = document.getElementById(section);
+          if (el && window.scrollY >= el.offsetTop - 200) {
+            setActiveSection(section);
+            break;
+          }
         }
-      }
+      });
     };
 
-    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, [pathname]);
 
