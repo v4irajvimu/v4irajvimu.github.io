@@ -1,16 +1,17 @@
 import dynamic from "next/dynamic";
-import Navbar from "./components/Navbar";
-import HeroSection from "./components/HeroSection";
 import AboutSection from "./components/AboutSection";
+import HeroSection from "./components/HeroSection";
+import Navbar from "./components/Navbar";
 import SkillsSection from "./components/SkillsSection";
 // import ProjectsSection from "./components/ProjectsSection";
 import BlogSection from "./components/BlogSection";
 import ContactSection from "./components/ContactSection";
-import Footer from "./components/Footer";
 import {
+  CollaborationsSectionPlaceholder,
   ExperienceSectionPlaceholder,
   TestimonialsSectionPlaceholder,
 } from "./components/DeferredSectionPlaceholders";
+import Footer from "./components/Footer";
 
 const ExperienceSection = dynamic(
   () => import("./components/ExperienceSection"),
