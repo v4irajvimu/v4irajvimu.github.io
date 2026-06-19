@@ -1,3 +1,10 @@
+# [1.17.0](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.16.5...v1.17.0) (2026-06-19)
+
+
+### Features
+
+* add course certificates section ([4691714](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/46917140299979a2215391c95dc840f91b7aa957))
+
 ## [1.16.5](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.16.4...v1.16.5) (2026-04-01)
 
 
