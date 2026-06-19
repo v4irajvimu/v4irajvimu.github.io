@@ -2,20 +2,66 @@ import { Experience } from "../types";
 
 export const experiences: Experience[] = [
   {
+    company: "Virtusa",
+    location: "Colombo 5, Sri Lanka",
+    url: "https://www.virtusa.com",
+    logo: "/images/companies/virtusa_logo.jfif",
+
+    from: { month: 2, year: 2026 },
+    to: { month: 0, year: 0, isPresent: true },
+    roles: [
+      {
+        title: "Associate Technical Specialist",
+        from: { month: 2, year: 2026 },
+        to: { month: 0, year: 0, isPresent: true },
+        description:
+          "Transitioned to Virtusa following the acquisition of Wiley Global Technology Sri Lanka, while continuing in the same Associate Technical Specialist role and supporting Wiley digital learning products, platforms, and engineering initiatives. As part of the Virtusa team supporting Wiley, I contribute to the technical strategy, architecture, development, and delivery of scalable, accessible, and AI-enhanced digital learning experiences.",
+        achievements: [
+          "Lead feature architecture and technical delivery for Wiley Reader and related digital learning platforms",
+          "Design scalable frontend applications using React, Next.js, TypeScript, Material UI, and modern state-management patterns",
+          "Build and integrate cloud-native solutions using Node.js, GraphQL, AWS Lambda, AppSync, API Gateway, DynamoDB, Step Functions, S3, OpenSearch, and CloudFront",
+          "Contribute to AI-powered learning experiences, semantic search, intelligent content discovery, and Generative AI integrations",
+          "Translate business and product requirements into practical technical designs and implementation strategies",
+          "Maintain reusable design-system components and shared frontend packages",
+          "Improve accessibility, performance, maintainability, deployment workflows, and production reliability",
+          "Provide technical guidance, code reviews, architectural input, and engineering support across cross-functional teams",
+          "Collaborate with Wiley and Virtusa stakeholders while maintaining continuity of product knowledge, ownership, and delivery",
+        ],
+        technologies: [
+          "React",
+          "Next.js",
+          "TypeScript",
+          "Material UI",
+          "Node.js",
+          "GraphQL",
+          "AWS Lambda",
+          "AppSync",
+          "API Gateway",
+          "DynamoDB",
+          "Step Functions",
+          "S3",
+          "OpenSearch",
+          "CloudFront",
+          "GenAI",
+        ],
+      },
+    ],
+  },
+  {
     company: "Wiley Global Technology (PVT) LTD.",
     location: "Colombo 5, Sri Lanka",
     url: "https://www.wiley.com/en-sg",
     logo: "/images/companies/wiley-logo.png",
 
     from: { month: 3, year: 2022 },
-    to: { month: 0, year: 0, isPresent: true },
+    to: { month: 2, year: 2026 },
     roles: [
       {
         title: "Associate Technical Specialist",
         from: { month: 7, year: 2023 },
-        to: { month: 0, year: 0, isPresent: true },
+        to: { month: 2, year: 2026 },
         description:
-          "Driving technical strategy and leading cross-functional engineering teams to deliver scalable, AI-enhanced web platforms.",
+          "Drove technical strategy and led cross-functional engineering teams to deliver scalable, AI-enhanced web platforms.",
         achievements: [
           "Led feature delivery and architecture for the Wiley Reader platform",
           "Built scalable frontend solutions using React and modern state patterns",
