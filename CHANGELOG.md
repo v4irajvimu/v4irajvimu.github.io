@@ -1,3 +1,10 @@
+# [1.18.0](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.17.0...v1.18.0) (2026-06-19)
+
+
+### Features
+
+* add virtusa role after wiley acquisition ([96ba9e4](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/96ba9e405c05448e04e6ee229190565c62941408))
+
 # [1.17.0](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.16.5...v1.17.0) (2026-06-19)
 
 
