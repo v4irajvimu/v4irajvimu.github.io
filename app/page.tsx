@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import SkillsSection from "./components/SkillsSection";
 // import ProjectsSection from "./components/ProjectsSection";
 import BlogSection from "./components/BlogSection";
+import CertificatesSection from "./components/CertificatesSection";
 import ContactSection from "./components/ContactSection";
 import {
   CollaborationsSectionPlaceholder,
@@ -38,6 +39,7 @@ export default function Home() {
         <SkillsSection />
         <BlogSection />
         <ExperienceSection />
+        <CertificatesSection />
         {/* <ProjectsSection /> */}
         <TestimonialsSection />
         <CollaborationsSection />

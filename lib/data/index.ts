@@ -7,3 +7,4 @@ export { projects } from "./projects";
 export { blogPosts } from "./blogPosts";
 export { testimonials } from "./testimonials";
 export { linkedInRecommendations } from "./linkedInRecommendations";
+export { certificates, featuredCertificates } from "./certificates";

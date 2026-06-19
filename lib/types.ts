@@ -93,6 +93,25 @@ export interface LinkedInRecommendation {
   connectionDegree?: string;
 }
 
+export interface Certificate {
+  id: string;
+  title: string;
+  issuer: string;
+  /** ISO date string, e.g. "2024-03-15" */
+  completedDate: string;
+  /** Verify or view credential URL */
+  credentialUrl?: string;
+  /** Certificate image under public/, e.g. "/images/certificates/aws-saa.jpg" */
+  image: string;
+  /** Optional issuer logo under public/, e.g. "/images/certificates/logos/aws.png" */
+  logo?: string;
+  /** Provider key for icon fallback when no logo is set */
+  provider?: "coursera" | "udemy" | "linkedin" | "aws" | "google" | "other" | "virtusa";
+  skills?: string[];
+  /** Show on the home page certificates section (max 3, newest first) */
+  featured?: boolean;
+}
+
 export interface PersonalInfo {
   name: string;
   title: string;
