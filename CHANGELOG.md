@@ -1,3 +1,10 @@
+# [1.19.0](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.18.0...v1.19.0) (2026-06-19)
+
+
+### Features
+
+* add react testing and debugging certificate ([e041f11](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/e041f11ecda355e000da8f97eb5c9b2399e2fdba))
+
 # [1.18.0](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.17.0...v1.18.0) (2026-06-19)
 
 
