@@ -93,6 +93,17 @@ const certificatesData: Certificate[] = [
     skills: ["CSS", "HTML", "JavaScript", "Frontend"],
     featured: false,
   },
+  {
+    id: "react-testing-and-debugging",
+    title: "React Testing and Debugging",
+    issuer: "LinkedIn Learning",
+    completedDate: "2022-03-23",
+    credentialUrl: "https://www.linkedin.com/learning/",
+    image: "/images/certificates/react-testing-and-debugging.png",
+    provider: "linkedin",
+    skills: ["React", "Testing", "Debugging"],
+    featured: false,
+  },
 ];
 
 export const HOME_CERTIFICATES_COUNT = 3;
