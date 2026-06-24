@@ -1,3 +1,10 @@
+# [1.21.0](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.20.0...v1.21.0) (2026-06-24)
+
+
+### Features
+
+* add anthropic icon to CertificateCard component ([35191dd](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/35191dd88b90d850495123ba5a828fb9f9cd6a06))
+
 # [1.20.0](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.19.0...v1.20.0) (2026-06-24)
 
 
