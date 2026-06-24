@@ -6,6 +6,17 @@ import { Certificate } from "../types";
  */
 const certificatesData: Certificate[] = [
   {
+    id: "claude-101-anthropic",
+    title: "Claude 101",
+    issuer: "Anthropic Education",
+    completedDate: "2026-06-24",
+    credentialUrl: "https://verify.skilljar.com/c/o5ho7k6byy8y",
+    image: "/images/certificates/claude-101-certificate.jpg",
+    provider: "anthropic",
+    skills: ["Claude", "AI", "LLM", "Prompt Engineering"],
+    featured: true,
+  },
+  {
     id: "gen-ai-asssistediengineer-virtusa",
     title: "Virtusa Certified Gen AI Assisted Engineer",
     issuer: "Virtusa",
@@ -57,7 +68,14 @@ const certificatesData: Certificate[] = [
     credentialUrl: "https://www.linkedin.com/learning/",
     image: "/images/certificates/serverless-apps-aws-linkedin-learning.png",
     provider: "linkedin",
-    skills: ["AWS", "Serverless", "Lambda", "API Gateway", "CloudFront", "CloudWatch"],
+    skills: [
+      "AWS",
+      "Serverless",
+      "Lambda",
+      "API Gateway",
+      "CloudFront",
+      "CloudWatch",
+    ],
     featured: true,
   },
   {
@@ -68,7 +86,13 @@ const certificatesData: Certificate[] = [
     credentialUrl: "https://www.linkedin.com/learning/",
     image: "/images/certificates/learning-graphql-linkedin-learning.png",
     provider: "linkedin",
-    skills: ["GraphQL", "API", "GraphQL Schema", "GraphQL Query", "GraphQL Mutation"],
+    skills: [
+      "GraphQL",
+      "API",
+      "GraphQL Schema",
+      "GraphQL Query",
+      "GraphQL Mutation",
+    ],
     featured: false,
   },
   {
@@ -79,7 +103,13 @@ const certificatesData: Certificate[] = [
     credentialUrl: "https://www.linkedin.com/learning/",
     image: "/images/certificates/graphql-essesntials-linkedin-learning.png",
     provider: "linkedin",
-    skills: ["GraphQL", "API", "GraphQL Schema", "GraphQL Query", "GraphQL Mutation"],
+    skills: [
+      "GraphQL",
+      "API",
+      "GraphQL Schema",
+      "GraphQL Query",
+      "GraphQL Mutation",
+    ],
     featured: false,
   },
   {

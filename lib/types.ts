@@ -106,7 +106,15 @@ export interface Certificate {
   /** Optional issuer logo under public/, e.g. "/images/certificates/logos/aws.png" */
   logo?: string;
   /** Provider key for icon fallback when no logo is set */
-  provider?: "coursera" | "udemy" | "linkedin" | "aws" | "google" | "other" | "virtusa";
+  provider?:
+    | "coursera"
+    | "udemy"
+    | "linkedin"
+    | "aws"
+    | "google"
+    | "other"
+    | "virtusa"
+    | "anthropic";
   skills?: string[];
   /** Show on the home page certificates section (max 3, newest first) */
   featured?: boolean;
