@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { HiCalendar } from "react-icons/hi";
 import { FaLinkedin } from "react-icons/fa6";
 import { TbBrandAws } from "react-icons/tb";
-import { SiGooglegemini } from "react-icons/si";
+import { SiGooglegemini, SiAnthropic } from "react-icons/si";
 import { HiAcademicCap } from "react-icons/hi";
 import type { Certificate } from "@/lib/types";
 import CertificateImage from "./CertificateImage";
@@ -18,6 +18,7 @@ const providerIcon: Record<
   udemy: HiAcademicCap,
   linkedin: FaLinkedin,
   google: SiGooglegemini,
+  anthropic: SiAnthropic,
   virtusa: HiAcademicCap,
   other: HiAcademicCap,
 };
