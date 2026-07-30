@@ -1,3 +1,10 @@
+## [1.21.1](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.21.0...v1.21.1) (2026-07-30)
+
+
+### Bug Fixes
+
+* enhance CollaborationsSection with streak support ([413bad7](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/413bad703c73baa8f9335a1469c13ed1d10dbadb))
+
 # [1.21.0](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.20.0...v1.21.0) (2026-06-24)
 
 
