@@ -6,6 +6,17 @@ import { Certificate } from "../types";
  */
 const certificatesData: Certificate[] = [
   {
+    id: "introduction-to-loop-engineering-udemy",
+    title: "Introduction to Loop Engineering",
+    issuer: "Udemy",
+    completedDate: "2026-08-08",
+    credentialUrl: "https://ude.my/UC-bd6657ea-3dae-43b8-aeb6-035f1b449374",
+    image: "/images/certificates/introduction-to-loop-engineering.jpg",
+    provider: "udemy",
+    skills: ["Loop", "AI Agents", "Agent Engineering"],
+    featured: false,
+  },
+  {
     id: "claude-101-anthropic",
     title: "Claude 101",
     issuer: "Anthropic Education",
