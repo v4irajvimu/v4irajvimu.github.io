@@ -1,3 +1,10 @@
+# [1.23.0](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.22.0...v1.23.0) (2026-08-10)
+
+
+### Features
+
+* add certificate provider filter chips ([6c899d2](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/6c899d263513220d2c0b99ae553c7c7240dbdd59))
+
 # [1.22.0](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.21.1...v1.22.0) (2026-08-10)
 
 
