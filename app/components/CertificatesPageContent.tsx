@@ -16,6 +16,31 @@ const SORT_OPTIONS = [
 ] as const;
 
 type SortValue = (typeof SORT_OPTIONS)[number]["value"];
+type CertificateProvider = NonNullable<Certificate["provider"]>;
+type ProviderFilter = "all" | CertificateProvider;
+
+const PROVIDER_LABELS: Record<CertificateProvider, string> = {
+  aws: "AWS",
+  coursera: "Coursera",
+  udemy: "Udemy",
+  linkedin: "LinkedIn",
+  google: "Google",
+  anthropic: "Anthropic",
+  virtusa: "Virtusa",
+  other: "Other",
+};
+
+function getAvailableProviders(
+  items: Certificate[],
+): CertificateProvider[] {
+  const providers = new Set<CertificateProvider>();
+  for (const certificate of items) {
+    providers.add(certificate.provider ?? "other");
+  }
+  return Array.from(providers).sort((a, b) =>
+    PROVIDER_LABELS[a].localeCompare(PROVIDER_LABELS[b]),
+  );
+}
 
 function sortCertificates(
   items: Certificate[],
@@ -51,10 +76,20 @@ function sortCertificates(
 function filterCertificates(
   items: Certificate[],
   query: string,
+  provider: ProviderFilter,
 ): Certificate[] {
-  if (!query.trim()) return items;
+  let result = items;
+
+  if (provider !== "all") {
+    result = result.filter(
+      (certificate) => (certificate.provider ?? "other") === provider,
+    );
+  }
+
+  if (!query.trim()) return result;
+
   const q = query.trim().toLowerCase();
-  return items.filter(
+  return result.filter(
     (certificate) =>
       certificate.title.toLowerCase().includes(q) ||
       certificate.issuer.toLowerCase().includes(q) ||
@@ -62,16 +97,29 @@ function filterCertificates(
   );
 }
 
+const chipBaseClass =
+  "inline-flex shrink-0 items-center rounded-full border px-3.5 py-1.5 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background";
+const chipActiveClass =
+  "border-accent bg-accent text-white shadow-sm shadow-accent/25";
+const chipInactiveClass =
+  "border-muted bg-card text-muted-foreground hover:border-accent/40 hover:text-foreground";
+
 export default function CertificatesPageContent() {
   const [search, setSearch] = useState("");
   const [sort, setSort] = useState<SortValue>("date-desc");
+  const [provider, setProvider] = useState<ProviderFilter>("all");
   const [selectedCertificate, setSelectedCertificate] =
     useState<Certificate | null>(null);
 
+  const availableProviders = useMemo(
+    () => getAvailableProviders(certificates),
+    [],
+  );
+
   const filteredAndSorted = useMemo(() => {
-    const filtered = filterCertificates(certificates, search);
+    const filtered = filterCertificates(certificates, search, provider);
     return sortCertificates(filtered, sort);
-  }, [search, sort]);
+  }, [search, sort, provider]);
 
   const openDetail = useCallback(
     (certificate: Certificate) => setSelectedCertificate(certificate),
@@ -98,8 +146,8 @@ export default function CertificatesPageContent() {
           </p>
         </div>
 
-        <div className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <div className="relative flex-1 max-w-md">
+        <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div className="relative w-full max-w-md">
             <HiSearch
               className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground"
               size={20}
@@ -123,7 +171,7 @@ export default function CertificatesPageContent() {
             <select
               value={sort}
               onChange={(e) => setSort(e.target.value as SortValue)}
-              className="rounded-lg border border-card-border bg-card px-4 py-2.5 text-foreground focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+              className="w-full min-w-0 rounded-lg border border-card-border bg-card px-4 py-2.5 text-foreground focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent sm:w-auto"
               aria-label="Sort certificates"
             >
               {SORT_OPTIONS.map((opt) => (
@@ -135,16 +183,52 @@ export default function CertificatesPageContent() {
           </div>
         </div>
 
+        <div
+          role="group"
+          aria-label="Filter by provider"
+          className="-mx-4 mb-10 flex gap-2 overflow-x-auto px-4 pb-1 sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0"
+        >
+          <button
+            type="button"
+            onClick={() => setProvider("all")}
+            aria-pressed={provider === "all"}
+            className={`${chipBaseClass} ${
+              provider === "all" ? chipActiveClass : chipInactiveClass
+            }`}
+          >
+            All
+          </button>
+          {availableProviders.map((providerKey) => {
+            const isActive = provider === providerKey;
+            return (
+              <button
+                key={providerKey}
+                type="button"
+                onClick={() => setProvider(providerKey)}
+                aria-pressed={isActive}
+                className={`${chipBaseClass} ${
+                  isActive ? chipActiveClass : chipInactiveClass
+                }`}
+              >
+                {PROVIDER_LABELS[providerKey]}
+              </button>
+            );
+          })}
+        </div>
+
         {filteredAndSorted.length === 0 ? (
           <p className="rounded-xl border border-card-border bg-card p-8 text-center text-muted-foreground">
-            No certificates match your search. Try a different term or clear the
-            search.
+            No certificates match your filters. Try a different search or
+            provider.
           </p>
         ) : (
           <>
             <p className="text-sm text-muted-foreground mb-6">
               Showing {filteredAndSorted.length} certificate
               {filteredAndSorted.length !== 1 ? "s" : ""}
+              {provider !== "all"
+                ? ` from ${PROVIDER_LABELS[provider]}`
+                : ""}
             </p>
             <div className="grid auto-rows-min gap-6 md:grid-cols-2 lg:grid-cols-3">
               {filteredAndSorted.map((certificate, index) => (
