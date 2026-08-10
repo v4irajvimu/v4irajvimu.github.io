@@ -1,3 +1,10 @@
+# [1.22.0](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.21.1...v1.22.0) (2026-08-10)
+
+
+### Features
+
+* add introduction to loop engineering certificate ([90d6e87](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/90d6e876e422ad4a8e22dd01e761015ce3f1cb36))
+
 ## [1.21.1](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.21.0...v1.21.1) (2026-07-30)
 
 
