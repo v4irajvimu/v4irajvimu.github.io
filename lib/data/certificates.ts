@@ -15,7 +15,7 @@ const certificatesData: Certificate[] = [
       "/images/certificates/claude-code-101-certificate-vimukthi-jayasinghe.png",
     provider: "anthropic",
     skills: ["Claude Code", "AI", "CLI", "Agentic Development"],
-    featured: true,
+    featured: false,
   },
   {
     id: "introduction-to-loop-engineering-udemy",
