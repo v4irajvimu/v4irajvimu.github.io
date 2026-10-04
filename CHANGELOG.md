@@ -1,3 +1,11 @@
+# [1.24.0](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.23.0...v1.24.0) (2026-10-04)
+
+
+### Features
+
+* add claude code 101 certificate ([314e3ba](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/314e3baaa8b4323c2e74162eab21c018ee7e4127))
+* add claude code 101 certificate ([8fc3c88](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/8fc3c889d6f3c629042d0efe58eabf8cbdc0c57e))
+
 # [1.23.0](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.22.0...v1.23.0) (2026-08-10)
 
 
