@@ -6,6 +6,18 @@ import { Certificate } from "../types";
  */
 const certificatesData: Certificate[] = [
   {
+    id: "claude-code-101-anthropic",
+    title: "Claude Code 101",
+    issuer: "Anthropic Education",
+    completedDate: "2026-10-04",
+    credentialUrl: "https://verify.skilljar.com/c/32v7gbsk6mif",
+    image:
+      "/images/certificates/claude-code-101-certificate-vimukthi-jayasinghe.png",
+    provider: "anthropic",
+    skills: ["Claude Code", "AI", "CLI", "Agentic Development"],
+    featured: true,
+  },
+  {
     id: "introduction-to-loop-engineering-udemy",
     title: "Introduction to Loop Engineering",
     issuer: "Udemy",
