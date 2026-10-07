@@ -6,6 +6,30 @@ import { Certificate } from "../types";
  */
 const certificatesData: Certificate[] = [
   {
+    id: "claude-code-in-action-anthropic",
+    title: "Claude Code in Action",
+    issuer: "Anthropic Education",
+    completedDate: "2026-10-07",
+    credentialUrl: "https://verify.skilljar.com/c/rpijxaroiv49",
+    image:
+      "/images/certificates/claude-code-in-action-certificate-vimukthi-jayasinghe.png",
+    provider: "anthropic",
+    skills: ["Claude Code", "AI", "CLI", "Agentic Development"],
+    featured: false,
+  },
+  {
+    id: "introduction-to-mcp-anthropic",
+    title: "Introduction to Model Context Protocol",
+    issuer: "Anthropic Education",
+    completedDate: "2026-10-06",
+    credentialUrl: "https://verify.skilljar.com/c/cy24vwzm7kxh",
+    image:
+      "/images/certificates/introduction-to-mcp-antropic-certificate-vimukthi-jayasinghe.png",
+    provider: "anthropic",
+    skills: ["MCP", "Model Context Protocol", "AI", "Agents"],
+    featured: false,
+  },
+  {
     id: "claude-code-101-anthropic",
     title: "Claude Code 101",
     issuer: "Anthropic Education",
