@@ -1,3 +1,10 @@
+# [1.25.0](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.24.0...v1.25.0) (2026-10-07)
+
+
+### Features
+
+* add two anthropic course certificates ([57f200d](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/57f200ded0580b2d0d472449175a873f0fdd1129))
+
 # [1.24.0](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.23.0...v1.24.0) (2026-10-04)
 
 

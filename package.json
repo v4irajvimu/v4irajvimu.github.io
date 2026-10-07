@@ -1,6 +1,6 @@
 {
   "name": "v4irajvimu.github.io",
-  "version": "1.24.0",
+  "version": "1.25.0",
   "private": true,
   "scripts": {
     "avatars:download": "node scripts/download-recommendation-avatars.mjs",
