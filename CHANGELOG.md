@@ -1,3 +1,10 @@
+# [1.26.0](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.25.0...v1.26.0) (2026-10-07)
+
+
+### Features
+
+* add agent skills anthropic certificate ([b383e22](https://github.com/v4irajvimu/v4irajvimu.github.io/commit/b383e2217e865741e3ba29cc406094d855e98bfa))
+
 # [1.25.0](https://github.com/v4irajvimu/v4irajvimu.github.io/compare/v1.24.0...v1.25.0) (2026-10-07)
 
 
