@@ -6,6 +6,18 @@ import { Certificate } from "../types";
  */
 const certificatesData: Certificate[] = [
   {
+    id: "introduction-to-agent-skills-anthropic",
+    title: "Introduction to agent skills",
+    issuer: "Anthropic Education",
+    completedDate: "2026-10-07",
+    credentialUrl: "https://verify.skilljar.com/c/cyp9urv6q4m5",
+    image:
+      "/images/certificates/introduction-to-agent-skills-certificate-vimukthi-jayasinghe.png",
+    provider: "anthropic",
+    skills: ["Agent Skills", "AI Agents", "Claude", "MCP"],
+    featured: false,
+  },
+  {
     id: "claude-code-in-action-anthropic",
     title: "Claude Code in Action",
     issuer: "Anthropic Education",
